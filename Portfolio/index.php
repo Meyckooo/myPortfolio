@@ -1,0 +1,430 @@
+<!--?php @session_start();
+get_includes('head');
+get_includes('header');
+get_includes('nav');
+get_includes('banner');
+?-->
+<!--?php if ( is_front_page() ) { get_includes('middle'); }?-->
+<!DOCTYPE html>
+<!--[if lt IE 10]>      <html class="no-js lt-ie11 lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js lt-ie11 lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 11]>         <html class="no-js lt-ie11"> <![endif]-->
+<!--[if gt IE 11]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+
+  <title><?php //echo get_bloginfo('name');?></title>
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/hamburgers.min.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/rslides.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/skitter.styles.min.css" type="text/css" media="all" />
+  <!-- <?php //if ( is_user_logged_in() ) { ?>
+		<style>
+		@media only screen
+		and (max-width : 800px) {
+		nav.toggle_right_style{top:32px;}
+		}
+		@media only screen
+		and (max-width : 782px) {
+		nav.toggle_right_style{top:46px;}
+		}
+		</style>
+	<?php //}?> -->
+  <!--?php wp_head(); ?-->
+</head>
+
+        <!-- <body class="<!?php echo is_front_page() ? "front_page" : "non_home_page" ?>"> -->
+        <?php  if(is_front_page()){ ?> <body class="front_page"> <?php } else {?> <body> <?php }?>
+        <div class="protect-me">
+          <div class="clearfix">
+
+      <!-- Header -->
+      <div class="header_fix">
+        <div class="header_holder">
+          <header>
+            <div class="wrapper">
+              <div class="header_con">
+
+                <div class="main_logo">
+                  <a href="<?php //echo get_home_url(); ?>">
+                    <figure><img src="images/main-logo.png" alt="<?php //echo get_bloginfo('name');?>" /></figure>
+                  </a>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </header>
+          <!-- End Header -->
+
+          <!-- Navigation -->
+          <div id="nav_area">
+            <div class="nav_toggle_button">
+              <div class="logo_wrap"></div>
+              <div class="toggle_holder">
+                <div class="hamburger hamburger--spin-r">
+                  <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                  </div>
+                </div>
+                <small>Menu</small>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="toggle_right_nav">
+              <nav class="page_nav">
+                <div class="menu_slide_right">
+                  <a href="<?php //echo get_home_url(); ?>" class="logo_slide_right">
+                    <figure><img src="images/main-logo.png" alt="<?php //echo get_bloginfo('name');?>" /></figure>
+                  </a>
+                  <div class="toggle_holder">
+                    <div class="hamburger hamburger--spin-r">
+                      <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                      </div>
+                    </div>
+                    <small>Close</small>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="wrapper">
+                  <!--?php wp_nav_menu( array( 'container_class' => 'nav-menu', 'theme_location' => 'primary', 'after' => '<span><i class="fa fa-2x">&nbsp;&nbsp;&nbsp;&nbsp;</i></span>') ); ?-->
+                  <ul>
+                    <li class="current_page_item"><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Works</a></li>
+                    <li><a href="">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="toggle_nav_close"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navigation -->
+
+      <!-- Banner -->
+      <div id="banner">
+        <div class="wrapper">
+          <div class="bnr_con">
+
+            <div class="bnr_info">
+              <?php dynamic_sidebar('bnr_info'); ?>
+
+              <h2><small>Hello There! I am a</small> Front End Web Developer</h2>
+              <p>As a front-end web developer, my passion lies in creating beautiful and intuitive user experiences through the use of clean and efficient code.</p>
+              <a class="btn-style" href="javascript:;">Download My Resume</a>
+            </div>
+
+            <div class="social_media">
+              <ul>
+                <li><a href="https://www.facebook.com" target="_blank"> <figure><img src="images/fb-icon.png" alt="facebook" /></figure></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"> <figure><img src="images/twitter-icon.png" alt="twitter" /></figure></a></li>
+                <li><a href="https://www.github.com" target="_blank"> <figure><img src="images/github.png" alt="github" /></figure></a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Banner -->
+
+      <!-- Middle -->
+
+      <div id="middle">
+        <div class="wrapper">
+          <div class="middle_con">
+
+            <div class="middle_info">
+              <h2 class="h2_title">Services</h2>
+            </div>
+
+            <div class="middle_boxes">
+              <section class="middle_box1">
+                <?php dynamic_sidebar('middle_box1'); ?>
+                <h2 class="h2_rep">Deployment</h2>
+                <p>I am always available to address any issues or concerns you may have.</p>
+              </section>
+
+              <section class="middle_box2">
+                <?php dynamic_sidebar('middle_box2'); ?>
+                <h2 class="h2_rep">Design</h2>
+                <p>Specialized in creating stunning websites that are both visually appealing and user-friendly.</p>
+              </section>
+
+              <section class="middle_box3">
+                <?php dynamic_sidebar('middle_box3'); ?>
+                <h2 class="h2_rep">Developing</h2>
+                <p>I offer custom web development services tailored to your specific needs as a solo professional.</p>
+              </section>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- End Middle -->
+
+      <!-- Main -->
+      <div id="main_area">
+        <div class="wrapper">
+          <div class="main_con">
+            <main>
+                <h1 class="h1_title h2_title"><small>Hi I am</small>Meycko Jade Anthony Canoy</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis totam doloribus similique! Quod enim harum rerum necessitatibus esse, labore amet soluta eum quam deleniti, quos sit eligendi illo optio!</p>
+            </main>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!-- End Main -->
+
+      <!-- Bottom -->
+      <div id="bottom1">
+        <div class="wrapper">
+          <div class="btm1_con">
+            <div class="btm1_info">
+              <?php dynamic_sidebar('btm1_info'); ?>
+                <h2 class="h2_title">My Works</h2>
+            </div>
+            <div class="btm1_boxes">
+
+              <section class="btm1_box1">
+                  <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box1'); ?>
+
+                  <h2>Work#1</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="btm1_box2">
+                <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box2'); ?>
+
+                  <h2>Work#2</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="btm1_box3">
+                <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box3'); ?>
+
+                  <h2>Work#3</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="btm1_box4">
+                <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box4'); ?>
+
+                  <h2>Work#4</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="btm1_box5">
+                <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box5'); ?>
+
+                  <h2>Work#4</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="btm1_box6">
+                <figure><img src="" alt=""></figure>
+                <div class="btm1_box_info">
+                  <?php dynamic_sidebar('btm1_box6'); ?>
+
+                  <h2>Work#4</h2>
+                  <div class="boxes_btn">
+                    <a class="btn-style" href="javascript:;">View</a>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom3">
+        <div class="wrapper">
+          <div class="btm3_con">
+            <div class="btm3_form_con">
+              <div class="btm3_info">
+                <?php dynamic_sidebar('btm3_info'); ?>
+                <h2 class="h2_title">Let's Connect!</h2>
+              </div>
+
+              <div class="btm3_form_parent">
+                <div id="invalid-msg"></div>
+                <form action="#bottom3" id="submit_formmessage" method="post">
+                  <input type="text" name="Robot" placeholder="Spam" value="<?php echo $_SESSION['Robot']; ?>"
+                    style="display:none;">
+                  <div class="full_name">
+                    <label for="fullname">Name: </label>
+                    <input type="text" class="form_fullname" name="Full_Name" placeholder="What's Your Name"
+                    value="<?php echo $_SESSION['Full_Name']; ?>" required />
+                  </div>
+                  <div class="email_address">
+                    <label for="emailaddress"></label>
+                    <input type="email" class="form_email" name="Email_Address" placeholder="What's Your Email Address?"
+                    value="<?php echo $_SESSION['Email_Address']; ?>" required />
+                  </div>
+                  <div class="message_box">
+                    <label for="message">Message:</label>
+                    <textarea name="Question_or_Comment"
+                    placeholder="Lets connect!"><?php echo $_SESSION['Question_or_Comment']; ?></textarea>
+                  </div>  
+                    <div class="button_flex">
+                      <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Bottom -->
+
+      <!--Footer -->
+      <footer>
+        <div class="footer_top">
+          <div class="wrapper">
+            <div class="footer_top_con">
+              
+              <div class="gmap">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52854579.80404672!2d-161.4566869140974!3d36.045010052460384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sph!4v1729147879595!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+              <div class="contact_con">
+                <div class="contact_info_ul">
+                  <?php dynamic_sidebar('contact_info_ul'); ?>
+                  <ul>
+                    <li><q>Phone Number: </q>
+                      <span><a href="tel:1234567890"><mark>123-456-7890</mark></a></span>
+                    </li>
+                    <li><q>Email Address:</q>
+                      <span><a href="mailto:meyckocanoy@gmail.com">meyckocanoy@gmail.com</a></span>
+                    </li>
+                    <li><q>Location: </q>
+                      <address>123 Street Name, Suite A City Name, Texas 12345</address>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div class="footer_logo_holder">
+                <div class="footer_logo">
+                  <a href="<?php //echo get_home_url(); ?>">
+                    <figure><img src="images/footer-logo.png" alt="<?php //echo get_bloginfo('name');?>"></figure>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer_btm">
+          <div class="wrapper">
+            <div class="footer_btm_con">
+              <div class="footer_nav">
+                <!--?php wp_nav_menu( array('theme_location' => 'secondary' ) ); ?-->
+                <ul>
+                  <li class="current_page_item"><a href="index.php">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Works</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+
+              <div class="copyright">
+                &copy; Copyright
+                <?php
+						$start_year = '2024';
+						$current_year = date('Y');
+						$copyright = ($current_year == $start_year) ? $start_year : $current_year;
+						echo $copyright;
+						?> <q></q>
+                <!--span class="footer_comp"><!?php //echo get_bloginfo('name');?>CompanyName</span-->
+                <!-- <span class="privacy_policy"><a href="privacy-policy">Privacy Policy</a></span> -->
+                <span class="copyright_text_block">Designed by MJAC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <span class="back_top"></span>
+
+    </div> <!-- End Clearfix -->
+  </div> <!-- End Protect Me -->
+
+  <!--?php get_includes('ie');?-->
+
+  <!--
+  Solved HTML5 & CSS IE Issues
+
+  <//?php bloginfo('template_url');?>/
+
+  -->
+  <script src="js/modernizr-custom-v2.7.1.min.js"></script>
+  <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+  <script src="js/jquery-3.7.1.min.js"></script>
+
+  <!--
+  Solved Psuedo Elements IE Issues
+  -->
+  <script src="js/calcheight.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.skitter.min.js"></script>
+  <script src="js/responsiveslides.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery-migrate-3.5.0.min.js"></script>
+  <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+
+  <!--?php wp_footer(); ?-->
+</body>
+
+</html>
+<!-- End Footer -->
