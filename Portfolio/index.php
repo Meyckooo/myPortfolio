@@ -18,8 +18,9 @@ get_includes('banner');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 
-  <title><?php //echo get_bloginfo('name');?></title>
+  <title>My Portfolio</title>
 
+  <link rel="icon" href="images/favicon.png">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="style.css">
@@ -206,76 +207,46 @@ get_includes('banner');
             <div class="btm1_boxes">
 
               <section class="btm1_box1">
-                  <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box1'); ?>
-
-                  <h2>Work#1</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#1</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
               </section>
-
+<!--               
               <section class="btm1_box2">
-                <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box2'); ?>
-
-                  <h2>Work#2</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#2</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
               </section>
 
               <section class="btm1_box3">
-                <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box3'); ?>
-
-                  <h2>Work#3</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#3</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
               </section>
 
               <section class="btm1_box4">
-                <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box4'); ?>
-
-                  <h2>Work#4</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#4</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
               </section>
 
               <section class="btm1_box5">
-                <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box5'); ?>
-
-                  <h2>Work#4</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#5</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
               </section>
 
               <section class="btm1_box6">
-                <figure><img src="" alt=""></figure>
-                <div class="btm1_box_info">
-                  <?php dynamic_sidebar('btm1_box6'); ?>
-
-                  <h2>Work#4</h2>
+                  <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#6</figcaption></figure>
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-                </div>
-              </section>
+              </section> -->
 
             </div>
           </div>
@@ -296,24 +267,22 @@ get_includes('banner');
                 <form action="#bottom3" id="submit_formmessage" method="post">
                   <input type="text" name="Robot" placeholder="Spam" value="<?php echo $_SESSION['Robot']; ?>"
                     style="display:none;">
-                  <div class="full_name">
-                    <label for="fullname">Name: </label>
+                  <div class="contactNameTxt">
+                    <label for="contactNameTxt">Name: </label>
                     <input type="text" class="form_fullname" name="Full_Name" placeholder="What's Your Name"
                     value="<?php echo $_SESSION['Full_Name']; ?>" required />
                   </div>
                   <div class="email_address">
-                    <label for="emailaddress"></label>
+                    <label for="emailaddress">Email Address:</label>
                     <input type="email" class="form_email" name="Email_Address" placeholder="What's Your Email Address?"
                     value="<?php echo $_SESSION['Email_Address']; ?>" required />
                   </div>
-                  <div class="message_box">
-                    <label for="message">Message:</label>
+                  <div class="messageTxt">
+                    <label for="messageTxt">Message:</label>
                     <textarea name="Question_or_Comment"
                     placeholder="Lets connect!"><?php echo $_SESSION['Question_or_Comment']; ?></textarea>
                   </div>  
-                    <div class="button_flex">
-                      <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
-                    </div>
+                  <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
                 </form>
               </div>
             </div>
@@ -328,29 +297,7 @@ get_includes('banner');
         <div class="footer_top">
           <div class="wrapper">
             <div class="footer_top_con">
-              
-              <div class="gmap">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52854579.80404672!2d-161.4566869140974!3d36.045010052460384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sph!4v1729147879595!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-
-              <div class="contact_con">
-                <div class="contact_info_ul">
-                  <?php dynamic_sidebar('contact_info_ul'); ?>
-                  <ul>
-                    <li><q>Phone Number: </q>
-                      <span><a href="tel:1234567890"><mark>123-456-7890</mark></a></span>
-                    </li>
-                    <li><q>Email Address:</q>
-                      <span><a href="mailto:meyckocanoy@gmail.com">meyckocanoy@gmail.com</a></span>
-                    </li>
-                    <li><q>Location: </q>
-                      <address>123 Street Name, Suite A City Name, Texas 12345</address>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-
+             
               <div class="footer_logo_holder">
                 <div class="footer_logo">
                   <a href="<?php //echo get_home_url(); ?>">
@@ -358,13 +305,20 @@ get_includes('banner');
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="footer_btm">
-          <div class="wrapper">
-            <div class="footer_btm_con">
+              <div class="copyright">
+                ❤️ Designed by
+                  <?php
+              $start_year = '2024';
+              $current_year = date('Y');
+              $copyright = ($current_year == $start_year) ? $start_year : $current_year;
+              echo $copyright;
+              ?> <q></q>
+                  <!--span class="footer_comp"><!?php //echo get_bloginfo('name');?>CompanyName</span-->
+                  <!-- <span class="privacy_policy"><a href="privacy-policy">Privacy Policy</a></span> -->
+                  <span class="copyright_text_block">MJAC ❤️</span>
+              </div>
+
               <div class="footer_nav">
                 <!--?php wp_nav_menu( array('theme_location' => 'secondary' ) ); ?-->
                 <ul>
@@ -376,21 +330,12 @@ get_includes('banner');
                 </ul>
               </div>
 
-              <div class="copyright">
-                &copy; Copyright
-                <?php
-						$start_year = '2024';
-						$current_year = date('Y');
-						$copyright = ($current_year == $start_year) ? $start_year : $current_year;
-						echo $copyright;
-						?> <q></q>
-                <!--span class="footer_comp"><!?php //echo get_bloginfo('name');?>CompanyName</span-->
-                <!-- <span class="privacy_policy"><a href="privacy-policy">Privacy Policy</a></span> -->
-                <span class="copyright_text_block">Designed by MJAC</span>
-              </div>
+             
+
             </div>
           </div>
         </div>
+
       </footer>
 
       <span class="back_top"></span>
