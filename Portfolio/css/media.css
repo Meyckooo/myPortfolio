@@ -197,7 +197,7 @@ and (max-width : 1000px) {
    .middle_info h2 { width: 100%; font-size: 50px;  max-width: 100%;padding: 0; }
    .middle_info p { width: 100%; max-width: 100%; padding: 0; margin-block: 30px;}
 	  .middle_boxes{ margin-top: 40px; flex-wrap: wrap; justify-content: space-evenly; gap: 40px 15px; width: 100%; max-width: 100%; }
-	  .middle_boxes section{ width: 45%; padding: 40px 20px 80px; max-width: 100%; }
+	  .middle_boxes section{ width: 100%;   }
     .middle_boxes section h2 { width: 100%; max-width: 100%; padding: 0; }
     .middle_boxes section h2:before { display: block; position: static; margin-bottom: 10px; }
     .middle_boxes section p { width: 100%; max-width: 100%; padding: 0; }
@@ -239,42 +239,26 @@ and (max-width : 1000px) {
   .btm1_info p { width: 100%; max-width: 100%; padding: 0;  margin-block: 30px;}
   .btm1_info a { margin: 0 auto; }
   
-  #bottom2{padding: 40px 25px;}
-	#bottom2:after,#bottom2:before { display: none; }
-  .btm2_con{min-height:0;padding:0;display: block;}
-	  .btm2_boxes { flex-wrap: wrap; gap: 40px 15px; position: static; justify-content: space-evenly; width: 100%; max-width: 100%; }
-	  .btm2_boxes section h2 { padding: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
-    .btm2_boxes section { max-width: 100%; width: 45%; text-align: center; padding: 40px 25px 80px; }
-    .btm2_boxes section a {}
-    .btm2_boxes section a:hover {}
-  .btm2_info { width: 100%; position: static; text-align: center; max-width: 100%; padding: 0; margin: 0; } 
-  .btm2_info h2 { font-size: 50px; width: 100%; max-width: 100%;  padding: 0; }
-  .btm2_info p { width: 100%; max-width: 100%; margin-block: 30px;}
-  .btm2_info a {  margin: 0 auto;}
-  .btm2_form_parent form { justify-content: space-evenly; column-gap: 10px; row-gap: 15px; }
-  .btm2_form_parent form input { width: 49%; }
-  .btm2_form_parent form textarea { width: 100%; }
-  .btm2_boxes section h2::before{position: static;display: block;margin-bottom: 15px;}
 
-    #bottom3{padding: 40px 25px;}
-    #bottom3:before, #bottom3:after { display: none; }
-    .btm3_con{min-height:0;padding:0;display: block;}
-    .btm3_form_con{}
-	  .btm3_boxes{ flex-wrap: wrap; row-gap: 40px; justify-content: space-evenly; margin-top: 40px; position: static; width: 100%; max-width: 100%; }
-	  .btm3_boxes section { max-width: 100%; width: 45%; text-align: center; padding: 40px 25px 80px; }
-    .btm3_boxes section h2 { padding: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
-    .btm3_boxes section a{}
-    .btm3_boxes section a:hover{}
-    .btm3_info h2 { font-size: 50px; width: 100%; max-width: 100%; margin: 0 0 30px; }
-    .btm3_info p { width: 100%; }
-    .btm3_form_parent { width: 100%; position: static; margin-top: 25px; }
-  .btm3_info { width: 100%; text-align: center; max-width: 100%; padding: 0; margin: 0; position: static; }
-  .captcha_div { justify-content: center; }
-    .btm3_form_parent form { justify-content: space-evenly; column-gap: 10px; row-gap: 15px; }
-    .btm3_form_parent form input { width: 49%; }
-    .btm3_form_parent form textarea { width: 100%; }
-    .btm3_boxes section h2::before{position: static;display: block;margin-bottom: 15px;}
-    .form_bottom{flex-direction: column;row-gap: 15px;}
+#bottom2{padding: 40px 25px;}
+#bottom2:before, #bottom2:after { display: none; }
+.btm2_con{min-height:0;padding:0;display: block;}
+.btm2_form_con{}
+.btm2_boxes{ flex-wrap: wrap; row-gap: 40px; justify-content: space-evenly; margin-top: 40px; position: static; width: 100%; max-width: 100%; }
+.btm2_boxes section { max-width: 100%; width: 45%; text-align: center; padding: 40px 25px 80px; }
+.btm2_boxes section h2 { padding: 0; margin-bottom: 20px; width: 100%; max-width: 100%; }
+.btm2_boxes section a{}
+.btm2_boxes section a:hover{}
+.btm2_info h2 { font-size: 50px; width: 100%; max-width: 100%; margin: 0 0 30px; }
+.btm2_info p { width: 100%; }
+.btm2_form_parent { width: 100%; position: static; margin-top: 25px; }
+.btm2_info { width: 100%; text-align: center; max-width: 100%; padding: 0; margin: 0; position: static; }
+.captcha_div { justify-content: center; }
+.btm2_form_parent form { justify-content: space-evenly; column-gap: 10px; row-gap: 15px; }
+.btm2_form_parent form input { width: 49%; }
+.btm2_form_parent form textarea { width: 100%; }
+.btm2_boxes section h2::before{position: static;display: block;margin-bottom: 15px;}
+.form_bottom{flex-direction: column;row-gap: 15px;}
     
     #bottom4{padding: 40px 25px;}
     #bottom4:after,#bottom4:before { display: none; }
@@ -387,7 +371,7 @@ and (max-width : 800px) {
 
   /*Bottom Area*/
   .btm1_info p::before { width: 80%;}
-  .btm3_form_parent form input{width: 100%;}
+  .btm2_form_parent form input{width: 100%;}
 
   /*Footer Area*/
   .contact_con{}
@@ -461,8 +445,8 @@ header{padding:0;}
   .btm4_boxes section { display: block; width: 400px; max-width: 100%; margin: 0 auto; }
   .btm4_form_parent form input { width: 100%; }
   .btm4_form_parent form button { width: 330px; max-width: 100%; }
-  .btm3_form_parent form input { width: 100%; }
-  .btm3_form_parent form button {  max-width: 100%; }
+  .btm2_form_parent form input { width: 100%; }
+  .btm2_form_parent form button {  max-width: 100%; }
   .captcha_div { flex-wrap: wrap; justify-content: center; gap: 20px; }
   /*Footer Area*/
   footer {padding-bottom: 45px;}

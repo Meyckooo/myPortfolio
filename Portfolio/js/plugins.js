@@ -209,33 +209,47 @@ attributes.forEach((attr) => {
     );
     return false;
   });
+
+// Function to handle smooth scrolling
+function enableSmoothScroll(navSelector) {
+  const navLinks = document.querySelectorAll(`${navSelector} a`);
+  
+  navLinks.forEach((link, index) => {
+  if (index === 0) {
+  // Skip smooth scroll for the first link (Home)
+  return;
+  }
+  
+  // Add smooth scrolling to other links
+  link.addEventListener('click', function (event) {
+  event.preventDefault(); // Prevent default jump behavior
+  
+  const targetId = this.getAttribute('href').substring(1);
+  document.getElementById(targetId).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+  });
+  });
+  }
+  
+  // Apply smooth scrolling to both navs
+  enableSmoothScroll('nav'); // Top nav
+  enableSmoothScroll('.footer_nav'); // Footer nav
   
 
   $(window).scroll(function () {
     // fade in fade out button
     var windowScroll = $(this).scrollTop();
 
-    $(".dummy_class").css("top", 0 - windowScroll * -0.23 + "px");
+
+    enableSmoothScroll('nav'); // Top nav
+    enableSmoothScroll('.footer_nav'); // Footer nav
 
     if (windowScroll > webHeight * 0.5 && window_width <= 600) {
       $(".back_top").fadeIn();
     } else {
       $(".back_top").fadeOut();
-    }
-
-    if ($("#classname").length >= 1) {
-      var fixbtm = $("#classname").offset().top;
-      if (fixbtm <= windowScroll && window_width > 1024) {
-        $("#classname").css({
-          "background-attachment": "fixed",
-          "background-position": "center top",
-        });
-      } else {
-        $("#classname").css({
-          "background-attachment": "unset",
-          "background-position": "center top",
-        });
-      }
     }
 
     // For (AddThis) Plugins
@@ -353,18 +367,18 @@ attributes.forEach((attr) => {
 
   // Smooth Scroll
 
-  // if ($("body").hasClass("front_page")){
+  if ($("body").hasClass("front_page")){
 
-  //   if(window_width > 1024){
-  //     const lenis = new Lenis()
+    if(window_width > 1024){
+      const lenis = new Lenis()
     
-  //     gsap.ticker.add((time)=>{
-  //       lenis.raf(time * 900)
-  //     })
+      gsap.ticker.add((time)=>{
+        lenis.raf(time * 700)
+      })
     
-  //     gsap.ticker.lagSmoothing(0)
-  //   }
-  // }
+      gsap.ticker.lagSmoothing(0)
+    }
+  }
 
   // Darkmode
   
@@ -381,4 +395,20 @@ attributes.forEach((attr) => {
   //   document.body.classList.toggle("dark-mode");
   // });
 
+  
+  // "Clickable Nav Mobile View"
+
+  // document.querySelector('body').classList.remove('active')
+
+  // document.querySelector('#menu-main-menu').addEventListener('click', e=>{
+  //   const target = e.target.closest('a')
+  //   if(!target) return
+  //   document.querySelector('.page_nav').classList.remove('toggle_right_style')
+  //   document.querySelector('.toggle_right_nav').classList.remove('toggle_right_cont')
+  //   document.querySelector('.hamburger').classList.remove('is-active')
+  //   document.querySelector('body').classList.remove('active')
+  //   })
+
 });
+
+

@@ -105,10 +105,10 @@ get_includes('banner');
                   <!--?php wp_nav_menu( array( 'container_class' => 'nav-menu', 'theme_location' => 'primary', 'after' => '<span><i class="fa fa-2x">&nbsp;&nbsp;&nbsp;&nbsp;</i></span>') ); ?-->
                   <ul>
                     <li class="current_page_item"><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Works</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#main_area" data-scroll>About</a></li>
+                    <li><a href="#middle" data-scroll>Services</a></li>
+                    <li><a href="#bottom1" data-scroll>Works</a></li>
+                    <li><a href="#bottom2" data-scroll>Contact</a></li>
                   </ul>
                 </div>
               </nav>
@@ -253,18 +253,18 @@ get_includes('banner');
         </div>
       </div>
 
-      <div id="bottom3">
+      <div class="data-scroll" id="bottom2">
         <div class="wrapper">
-          <div class="btm3_con">
-            <div class="btm3_form_con">
-              <div class="btm3_info">
-                <?php dynamic_sidebar('btm3_info'); ?>
+          <div class="btm2_con">
+            <div class="btm2_form_con">
+              <div class="btm2_info">
+                <?php dynamic_sidebar('btm2_info'); ?>
                 <h2 class="h2_title">Let's Connect!</h2>
               </div>
 
-              <div class="btm3_form_parent">
+              <div class="btm2_form_parent">
                 <div id="invalid-msg"></div>
-                <form action="#bottom3" id="submit_formmessage" method="post">
+                <form action="#bottom2" id="submit_formmessage" method="post">
                   <input type="text" name="Robot" placeholder="Spam" value="<?php echo $_SESSION['Robot']; ?>"
                     style="display:none;">
                   <div class="contactNameTxt">
@@ -323,10 +323,10 @@ get_includes('banner');
                 <!--?php wp_nav_menu( array('theme_location' => 'secondary' ) ); ?-->
                 <ul>
                   <li class="current_page_item"><a href="index.php">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Works</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#main_area">About</a></li>
+                  <li><a href="#middle">Services</a></li>
+                  <li><a href="#bottom1">Works</a></li>
+                  <li><a href="#bottom2">Contact</a></li>
                 </ul>
               </div>
 
@@ -366,6 +366,9 @@ get_includes('banner');
   <script src="js/wow.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery-migrate-3.5.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
 
   <!--?php wp_footer(); ?-->
