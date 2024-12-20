@@ -429,7 +429,7 @@ header{padding:0;}
 
 
   /*Middle Area*/
-  .middle_boxes section{display:block;width: 400px;margin:0 auto;max-width: 100%;}
+  .middle_boxes section{}
 
   /*Main Area*/
   .sideboxes section { width: 400px; max-width: 100%; margin: 0 auto; display: block; }
