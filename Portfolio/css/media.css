@@ -18,7 +18,7 @@ and (max-width : 1400px) {
   .page_nav ul { }
   .page_nav ul li a { }
   /*Banner Area*/
-  .bnr_info { left: 15px; }
+  .bnr_info {}
 
   /* .non_ban {  }
   .non_ban figure img { position: absolute; top: 0; left: 50%; -ms-transform: translateX(-50%); -webkit-transform: translateX(-50%); transform: translateX(-50%); max-width: initial; } */
@@ -71,9 +71,10 @@ and (max-width : 1200px) {
   /*Middle Area*/
 
   /*Main Area*/
-
+  main .h1_title{font-size: 50px;}
   /*Bottom Area*/
-
+  .btm1_boxes .slick-prev{top: 107%;left: -60px;right: 0;margin: 0 auto;line-height: 100%;}
+  .btm1_boxes .slick-next{top: 107.5%;/*! left: 48%; *//*! transform: translateX(-50%); */left: 0;right: -60px;margin: 0 auto;}
   /*Footer Area*/
   .footer_nav ul li a { }
 
@@ -138,10 +139,10 @@ and (max-width : 1000px) {
   .header_con{min-height: 0;padding:0;display: flex;justify-content: space-between;align-items: center;}
   .header_holder { position: static; }
   .header_fix { position: static; }
-  .main_logo{position: static;float: left;margin: 0;max-width: 100%;transform: unset;width: 50%;}
+  .main_logo{position: static;float: left;margin: 0 auto;max-width: 100%;transform: unset;width: 50%;}
   .head_info{text-align: right; align-items: flex-end;flex-direction: column;gap: 15px;}
   .header_info{ position: static;  align-items: flex-end;gap: 15px;flex-direction: column;}
-  .social_media{margin:0; position: static;}
+  .social_media{margin-inline:auto; position: static;}
   .social_media ul {}
   .header_info section h3{}
   .header_info section h3::before{ position: static; display: block; margin-bottom: 15px;}
@@ -154,9 +155,10 @@ and (max-width : 1000px) {
   .page_nav ul{ margin:0; padding:0 5px;text-align:center; position: static; display: block;}
   .page_nav ul li{width: 32%; margin:5px 3px;}
   .page_nav ul li:after{display:none;}
-  .page_nav ul li a{border:1px solid #fff;border-radius:5px;line-height: 60px;height:auto;padding: 0; min-height: 0; display: block;}
-  .page_nav ul li a:hover, .page_nav ul li a:active, .page_nav ul li.current_page_item > a{text-decoration: none;background:var(--secColor);}
+  .page_nav ul li a{outline:1px solid var(--black);border-radius:5px;line-height: 60px;height:auto;padding: 0; min-height: 0; display: block;color: var(--black);}
+  .page_nav ul li a:hover, .page_nav ul li a:active, .page_nav ul li.current_page_item > a{text-decoration: none;background:var(--black);color: var(--primaryColor);outline: unset;}
   .page_nav ul li.menu-item-has-children > span{right:0;top:15px; transform: unset; left: unset; color: var(--white);}
+  .page_nav ul li a:hover::after, .page_nav ul li.current_page_item > a::after{display: none;}
 
   .page_nav ul ul, .page_nav ul ul li, .page_nav ul ul li a {width:100%; }
   .page_nav ul ul li{margin: 0 !important}
@@ -165,7 +167,7 @@ and (max-width : 1000px) {
   .page_nav ul ul{padding: 0;}
 
   /*Banner Area*/
-  #banner{}
+  #banner{padding: 40px 25px;}
   #banner::before, #banner::after { display: none;}
   .bnr_con::before, .bnr_con::after { display: none;}
 	.bnr_con{min-height:0;padding:0;}
@@ -176,7 +178,7 @@ and (max-width : 1000px) {
   .rslides { display: block; z-index: 1;}
   .rslides2 { display: none;}
   
-    .bnr_info{width:100%; border-radius: 0; position:static;padding:45px 25px;text-align: center;background:var(--primaryColor);max-width: 100%;}
+    .bnr_info{width:100%; border-radius: 0; position:static;padding:0;text-align: center;max-width: 100%;}
   .bnr_info a { margin: 0 auto; }
   .bnr_info p { width: 100%; max-width: 100%; padding: 0; margin-block: 30px;}
   .bnr_info h2 { width: 100%; font-size: 50px; max-width: 100%;  padding: 0; }
@@ -227,7 +229,7 @@ and (max-width : 1000px) {
   #bottom1:after,#bottom1:before { display: none; }
 	 .btm1_con{min-height:0;padding:0;display: block;}
 	  .btm1_boxes{ position: static; flex-wrap: wrap; width: 100%; justify-content: space-evenly; gap: 40px 15px; margin-top: 40px; max-width: 100%; }
-	  .btm1_boxes section { width: 45%; text-align: center; padding: 40px 25px 80px; max-width: 100%; }
+	  .btm1_boxes section {  text-align: center;  max-width: 100%; }
     .btm1_boxes section h2 { width: 100%; padding: 0; max-width: 100%; margin-bottom: 25px; }
     .btm1_boxes section h2:before { display: block; position: static; margin-bottom: 10px; }
     .btm1_boxes section a {}

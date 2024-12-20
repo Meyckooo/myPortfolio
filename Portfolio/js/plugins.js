@@ -141,7 +141,7 @@ attributes.forEach((attr) => {
         $('#nav_area').insertBefore('header');
   
       } else if(window_width > 800 && window_width <= 1000){
-        $('.main_logo').insertBefore('.head_info');
+        $('.main_logo').prependTo('.header_con');
         $('#nav_area').insertAfter('header');
       } else {
         $('.main_logo').prependTo('.page_nav .wrapper');
@@ -215,36 +215,43 @@ function enableSmoothScroll(navSelector) {
   const navLinks = document.querySelectorAll(`${navSelector} a`);
   
   navLinks.forEach((link, index) => {
-  if (index === 0) {
-  // Skip smooth scroll for the first link (Home)
-  return;
-  }
-  
-  // Add smooth scrolling to other links
-  link.addEventListener('click', function (event) {
-  event.preventDefault(); // Prevent default jump behavior
-  
-  const targetId = this.getAttribute('href').substring(1);
-  document.getElementById(targetId).scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
+    if (index === 0 ) {
+      // Reload the page when the first link (Home) is clicked
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default behavior
+        window.location.reload(); // Reload the page
+      });
+      return; // Skip the rest of the loop for the first link
+    }
+
+    // Add smooth scrolling to other links
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default jump behavior
+      
+      const targetId = this.getAttribute('href').substring(1); // Remove the leading #
+      const targetElement = document.getElementById(targetId); // Get the target element
+      
+      if (targetElement) {
+        // If the target element exists, scroll to it
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      } else {
+        window.location.reload(); // Reload the page
+      }
+    });
   });
-  });
-  });
-  }
-  
-  // Apply smooth scrolling to both navs
-  enableSmoothScroll('nav'); // Top nav
-  enableSmoothScroll('.footer_nav'); // Footer nav
+}
+
+// Apply smooth scrolling to both navs
+enableSmoothScroll('nav'); // Top nav
+enableSmoothScroll('.footer_nav'); // Footer nav
   
 
   $(window).scroll(function () {
     // fade in fade out button
     var windowScroll = $(this).scrollTop();
-
-
-    enableSmoothScroll('nav'); // Top nav
-    enableSmoothScroll('.footer_nav'); // Footer nav
 
     if (windowScroll > webHeight * 0.5 && window_width <= 600) {
       $(".back_top").fadeIn();
@@ -365,6 +372,17 @@ function enableSmoothScroll(navSelector) {
   });
 
 
+  $(document).ready(function(){
+    $('.slick-slider').slick({
+      dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: true,
+    });
+  });
+
+
   // Smooth Scroll
 
   if ($("body").hasClass("front_page")){
@@ -408,6 +426,8 @@ function enableSmoothScroll(navSelector) {
   //   document.querySelector('.hamburger').classList.remove('is-active')
   //   document.querySelector('body').classList.remove('active')
   //   })
+
+
 
 });
 

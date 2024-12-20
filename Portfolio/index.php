@@ -20,6 +20,8 @@ get_includes('banner');
 
   <title>My Portfolio</title>
 
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
   <link rel="icon" href="images/favicon.png">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -104,11 +106,11 @@ get_includes('banner');
                 <div class="wrapper">
                   <!--?php wp_nav_menu( array( 'container_class' => 'nav-menu', 'theme_location' => 'primary', 'after' => '<span><i class="fa fa-2x">&nbsp;&nbsp;&nbsp;&nbsp;</i></span>') ); ?-->
                   <ul>
-                    <li class="current_page_item"><a href="">Home</a></li>
-                    <li><a href="#main_area" data-scroll>About</a></li>
-                    <li><a href="#middle" data-scroll>Services</a></li>
-                    <li><a href="#bottom1" data-scroll>Works</a></li>
-                    <li><a href="#bottom2" data-scroll>Contact</a></li>
+                    <li class="current_page_item"><a href="index.php">Home</a></li>
+                    <li><a href="#main_area">About</a></li>
+                    <li><a href="#middle">Services</a></li>
+                    <li><a href="#bottom1">Works</a></li>
+                    <li><a href="#bottom2">Contact</a></li>
                   </ul>
                 </div>
               </nav>
@@ -134,9 +136,9 @@ get_includes('banner');
 
             <div class="social_media">
               <ul>
-                <li><a href="https://www.facebook.com" target="_blank"> <figure><img src="images/fb-icon.png" alt="facebook" /></figure></a></li>
-                <li><a href="https://www.twitter.com" target="_blank"> <figure><img src="images/twitter-icon.png" alt="twitter" /></figure></a></li>
-                <li><a href="https://www.github.com" target="_blank"> <figure><img src="images/github.png" alt="github" /></figure></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"> <figure><img src="images/icons/fb-icon.png" alt="facebook" /></figure></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"> <figure><img src="images/icons/twitter-icon.png" alt="twitter" /></figure></a></li>
+                <li><a href="https://www.github.com" target="_blank"> <figure><img src="images/icons/github.png" alt="github" /></figure></a></li>
               </ul>
             </div>
 
@@ -204,7 +206,8 @@ get_includes('banner');
               <?php dynamic_sidebar('btm1_info'); ?>
                 <h2 class="h2_title">My Works</h2>
             </div>
-            <div class="btm1_boxes">
+            
+            <div class="btm1_boxes slick-slider">
 
               <section class="btm1_box1">
                   <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#1</figcaption></figure>
@@ -212,7 +215,7 @@ get_includes('banner');
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
               </section>
-<!--               
+              
               <section class="btm1_box2">
                   <figure><img src="images/bottom/screenshot.jpg" alt=""><figcaption>Work#2</figcaption></figure>
                   <div class="boxes_btn">
@@ -246,7 +249,7 @@ get_includes('banner');
                   <div class="boxes_btn">
                     <a class="btn-style" href="javascript:;">View</a>
                   </div>
-              </section> -->
+              </section>
 
             </div>
           </div>
@@ -369,8 +372,9 @@ get_includes('banner');
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
-
+   
   <!--?php wp_footer(); ?-->
 </body>
 
