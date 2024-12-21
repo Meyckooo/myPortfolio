@@ -205,7 +205,7 @@ attributes.forEach((attr) => {
       {
         scrollTop: 0,
       },
-      900
+      500
     );
     return false;
   });

@@ -107,7 +107,7 @@ get_includes('banner');
                   <!--?php wp_nav_menu( array( 'container_class' => 'nav-menu', 'theme_location' => 'primary', 'after' => '<span><i class="fa fa-2x">&nbsp;&nbsp;&nbsp;&nbsp;</i></span>') ); ?-->
                   <ul>
                     <li class="current_page_item"><a href="index.php">Home</a></li>
-                    <li><a href="#main_area">About</a></li>
+                    <li><a href="#banner">About</a></li>
                     <li><a href="#middle">Services</a></li>
                     <li><a href="#bottom1">Works</a></li>
                     <li><a href="#bottom2">Contact</a></li>
@@ -129,8 +129,8 @@ get_includes('banner');
             <div class="bnr_info">
               <?php dynamic_sidebar('bnr_info'); ?>
 
-              <h2><small>Hello There! I am a</small> Front End Web Developer</h2>
-              <p>As a front-end web developer, my passion lies in creating beautiful and intuitive user experiences through the use of clean and efficient code.</p>
+              <h2><small>Hello There! I am a</small> Meycko Jade Anthony Canoy</h2>
+              <p>A driven front-end developer with a year's experience creating and deploying user-friendly, responsive websites Skilled in HTML, CSS, JavaScript, and modern frameworks like React, with a strong focus on creating clean, efficient code and visually appealing interfaces.</p>
               <a class="btn-style" href="javascript:;">Download My Resume</a>
             </div>
 
@@ -189,8 +189,6 @@ get_includes('banner');
         <div class="wrapper">
           <div class="main_con">
             <main>
-                <h1 class="h1_title h2_title"><small>Hi I am</small>Meycko Jade Anthony Canoy</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum officiis totam doloribus similique! Quod enim harum rerum necessitatibus esse, labore amet soluta eum quam deleniti, quos sit eligendi illo optio!</p>
             </main>
           </div>
           <div class="clearfix"></div>
@@ -326,7 +324,7 @@ get_includes('banner');
                 <!--?php wp_nav_menu( array('theme_location' => 'secondary' ) ); ?-->
                 <ul>
                   <li class="current_page_item"><a href="index.php">Home</a></li>
-                  <li><a href="#main_area">About</a></li>
+                  <li><a href="#banner">About</a></li>
                   <li><a href="#middle">Services</a></li>
                   <li><a href="#bottom1">Works</a></li>
                   <li><a href="#bottom2">Contact</a></li>

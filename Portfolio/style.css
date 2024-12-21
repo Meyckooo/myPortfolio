@@ -257,8 +257,8 @@ header{ }
 
 
 /*main*/
-#main_area{ padding: 0 10px;position: relative;}
-.main_con{min-height:0;padding:100px 0 200px; }
+#main_area{ padding: 0 10px;position: relative;display: none;}
+.main_con{min-height:0;padding:0; }
 	main{width: 100%; text-align: center;}
 	main .h1_title{ margin: 0 auto 70px;width: max-content;font-size: 65px;}
 main .h1_title:after{width: 110%;}
