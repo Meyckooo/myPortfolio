@@ -215,6 +215,9 @@ header{ }
 .slider video { display: block; width: 100%; max-width: 100%; height: auto; }
 .mobi_ban{display: none;}
 .rslides { display: none;}
+.bnr_design{position: absolute;right: 100px;top: 220px;width: 37%;max-width: 512px;}
+.bnr_design figure{}
+.bnr_design figure img{}
 .bnr_info{width:100%;max-width:630px;position: relative;}
 .bnr_info h2{font: 700 70px/100% var(--primaryHeading);color: inherit;}
 .bnr_info h2 span{display:block;margin-top: 5px;}

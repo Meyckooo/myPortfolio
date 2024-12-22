@@ -126,6 +126,10 @@ get_includes('banner');
         <div class="wrapper">
           <div class="bnr_con">
 
+          <div class="bnr_design">
+            <figure><img src="images/file-sharing2.png" alt="file sharing"></figure>
+          </div>
+
             <div class="bnr_info">
               <?php dynamic_sidebar('bnr_info'); ?>
 
