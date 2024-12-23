@@ -127,7 +127,7 @@ get_includes('banner');
           <div class="bnr_con">
 
           <div class="bnr_design">
-            <figure><img src="images/file-sharing2.png" alt="file sharing"></figure>
+            <figure><img src="images/Desk.png" alt="file sharing"></figure>
           </div>
 
             <div class="bnr_info">
@@ -290,6 +290,10 @@ get_includes('banner');
                   <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
                 </form>
               </div>
+            </div>
+
+            <div class="btm2_figure_icon">
+              <figure><img src="images/hands-phone.png" alt="Phone on the hand"></figure>
             </div>
           </div>
         </div>
