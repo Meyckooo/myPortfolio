@@ -47,8 +47,7 @@ get_includes('banner');
   <!--?php wp_head(); ?-->
 </head>
 
-        <!-- <body class="<!?php echo is_front_page() ? "front_page" : "non_home_page" ?>"> -->
-        <?php  if(is_front_page()){ ?> <body class="front_page"> <?php } else {?> <body> <?php }?>
+        <body>
         <div class="protect-me">
           <div class="clearfix">
 
@@ -60,8 +59,8 @@ get_includes('banner');
               <div class="header_con">
 
                 <div class="main_logo">
-                  <a href="<?php //echo get_home_url(); ?>">
-                    <figure><img src="images/main-logo.png" alt="<?php //echo get_bloginfo('name');?>" /></figure>
+                  <a href="index.html">
+                    <figure><img src="images/main-logo.png" alt="index.html" /></figure>
                   </a>
                 </div>
 
@@ -89,8 +88,8 @@ get_includes('banner');
             <div class="toggle_right_nav">
               <nav class="page_nav">
                 <div class="menu_slide_right">
-                  <a href="<?php //echo get_home_url(); ?>" class="logo_slide_right">
-                    <figure><img src="images/main-logo.png" alt="<?php //echo get_bloginfo('name');?>" /></figure>
+                  <a href="index.html" class="logo_slide_right">
+                    <figure><img src="images/main-logo.png" alt="index.html" /></figure>
                   </a>
                   <div class="toggle_holder">
                     <div class="hamburger hamburger--spin-r">
@@ -131,8 +130,6 @@ get_includes('banner');
           </div>
 
             <div class="bnr_info">
-              <?php dynamic_sidebar('bnr_info'); ?>
-
               <h2><small>Hello There! I am a</small> Meycko Jade Anthony Canoy</h2>
               <p>A driven front-end developer with a year's experience creating and deploying user-friendly, responsive websites Skilled in HTML, CSS, JavaScript, and modern frameworks like React, with a strong focus on creating clean, efficient code and visually appealing interfaces.</p>
               <a class="btn-style" href="javascript:;">Download My Resume</a>
@@ -163,19 +160,16 @@ get_includes('banner');
 
             <div class="middle_boxes">
               <section class="middle_box1">
-                <?php dynamic_sidebar('middle_box1'); ?>
                 <h2 class="h2_rep">Deployment</h2>
                 <p>I am always available to address any issues or concerns you may have.</p>
               </section>
 
               <section class="middle_box2">
-                <?php dynamic_sidebar('middle_box2'); ?>
                 <h2 class="h2_rep">Design</h2>
                 <p>Specialized in creating stunning websites that are both visually appealing and user-friendly.</p>
               </section>
 
               <section class="middle_box3">
-                <?php dynamic_sidebar('middle_box3'); ?>
                 <h2 class="h2_rep">Developing</h2>
                 <p>I offer custom web development services tailored to your specific needs as a solo professional.</p>
               </section>
@@ -205,7 +199,6 @@ get_includes('banner');
         <div class="wrapper">
           <div class="btm1_con">
             <div class="btm1_info">
-              <?php dynamic_sidebar('btm1_info'); ?>
                 <h2 class="h2_title">My Works</h2>
             </div>
             
@@ -263,7 +256,6 @@ get_includes('banner');
           <div class="btm2_con">
             <div class="btm2_form_con">
               <div class="btm2_info">
-                <?php dynamic_sidebar('btm2_info'); ?>
                 <h2 class="h2_title">Let's Connect!</h2>
               </div>
 
@@ -275,17 +267,17 @@ get_includes('banner');
                   <div class="contactNameTxt">
                     <label for="contactNameTxt">Name: </label>
                     <input type="text" class="form_fullname" name="Full_Name" placeholder="What's Your Name"
-                    value="<?php echo $_SESSION['Full_Name']; ?>" required />
+                    value="" required />
                   </div>
                   <div class="email_address">
                     <label for="emailaddress">Email Address:</label>
                     <input type="email" class="form_email" name="Email_Address" placeholder="What's Your Email Address?"
-                    value="<?php echo $_SESSION['Email_Address']; ?>" required />
+                    value="" required />
                   </div>
                   <div class="messageTxt">
                     <label for="messageTxt">Message:</label>
                     <textarea name="Question_or_Comment"
-                    placeholder="Lets connect!"><?php echo $_SESSION['Question_or_Comment']; ?></textarea>
+                    placeholder="Lets connect!"></textarea>
                   </div>  
                   <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
                 </form>
@@ -309,20 +301,21 @@ get_includes('banner');
              
               <div class="footer_logo_holder">
                 <div class="footer_logo">
-                  <a href="<?php //echo get_home_url(); ?>">
-                    <figure><img src="images/footer-logo.png" alt="<?php //echo get_bloginfo('name');?>"></figure>
+                  <a href="index.html">
+                    <figure><img src="images/footer-logo.png" alt="index.html"></figure>
                   </a>
                 </div>
               </div>
 
               <div class="copyright">
                 ❤️ Designed by
-                  <?php
+                  <!-- <?php
               $start_year = '2024';
               $current_year = date('Y');
               $copyright = ($current_year == $start_year) ? $start_year : $current_year;
               echo $copyright;
-              ?> <q></q>
+              ?>  -->
+              <q>2024</q>
                   <!--span class="footer_comp"><!?php //echo get_bloginfo('name');?>CompanyName</span-->
                   <!-- <span class="privacy_policy"><a href="privacy-policy">Privacy Policy</a></span> -->
                   <span class="copyright_text_block">MJAC ❤️</span>
