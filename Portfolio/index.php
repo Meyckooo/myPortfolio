@@ -127,7 +127,7 @@ get_includes('banner');
           <div class="bnr_con">
 
           <div class="bnr_design">
-            <figure><img src="images/Desk.png" alt="file sharing"></figure>
+            <figure><img src="images/Desk2.png" alt="file sharing"></figure>
           </div>
 
             <div class="bnr_info">
@@ -292,8 +292,8 @@ get_includes('banner');
               </div>
             </div>
 
-            <div class="btm2_figure_icon">
-              <figure><img src="images/hands-phone.png" alt="Phone on the hand"></figure>
+            <div class="btm2_figure_icon none">
+              <figure><img src="images/sign-up.png" alt="Sign up portrait"></figure>
             </div>
           </div>
         </div>

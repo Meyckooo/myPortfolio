@@ -390,7 +390,7 @@ main .h1_title:after{width: 110%;}
 .captcha_div { }
 .button_flex{display: flex; align-items: center;gap: 15px;}
 
-.btm2_figure_icon{position: absolute;top: 266px;right: 220px;width: 24%;max-width: 884px;}
+.btm2_figure_icon{position: absolute;top: 327px;right: 50px;z-index: -1;width: 100%;max-width: 700px;}
 .btm2_figure_icon figure{}
 
 #bottom4{ padding: 0 10px; background: pink;}

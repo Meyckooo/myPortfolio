@@ -32,7 +32,7 @@ and (max-width : 1400px) {
   .btm1_con { }
   
   .btm2_con { }
-
+  .btm2_figure_icon{right:0;}
   .btm3_form_con{ }
   /*Footer Area*/
   .footer_top_con { }
@@ -76,6 +76,7 @@ and (max-width : 1200px) {
   /*Bottom Area*/
   .btm1_boxes .slick-prev{top: 108%;left: -60px;right: 0;margin: 0 auto;line-height: 100%;}
   .btm1_boxes .slick-next{top: 108.5%;left: 0;right: -60px;margin: 0 auto;}
+  .btm2_figure_icon{width: 58%;top: 390px;}
   /*Footer Area*/
   .footer_nav ul li a { }
 
