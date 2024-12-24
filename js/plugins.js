@@ -415,19 +415,15 @@ enableSmoothScroll('.footer_nav'); // Footer nav
 
   
   // "Clickable Nav Mobile View"
-
-  // document.querySelector('body').classList.remove('active')
-
-  // document.querySelector('#menu-main-menu').addEventListener('click', e=>{
-  //   const target = e.target.closest('a')
-  //   if(!target) return
-  //   document.querySelector('.page_nav').classList.remove('toggle_right_style')
-  //   document.querySelector('.toggle_right_nav').classList.remove('toggle_right_cont')
-  //   document.querySelector('.hamburger').classList.remove('is-active')
-  //   document.querySelector('body').classList.remove('active')
-  //   })
-
-
+  document.querySelector('body').classList.remove('active')
+  document.querySelector('#menu-main-menu').addEventListener('click', e=>{
+    const target = e.target.closest('a')
+    if(!target) return
+    document.querySelector('.page_nav').classList.remove('toggle_right_style')
+    document.querySelector('.toggle_right_nav').classList.remove('toggle_right_cont')
+    document.querySelector('.hamburger').classList.remove('is-active')
+    document.querySelector('body').classList.remove('active')
+    })
 
 });
 
