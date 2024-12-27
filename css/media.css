@@ -548,7 +548,8 @@ and (max-width : 500px) {
   main .h1_title{}
   .middle_info h2{}
   .btm1_info h2{}
-  .btm2_info h2{}
+  .btm1_boxes .slick-prev{top: 110.8%;}
+  .btm1_boxes .slick-next{top: 111.5%;}
   .btm2_info h2:after{width: 100%;}
   .btm3_info h2{}
   .btm4_info h2{}
