@@ -272,19 +272,17 @@ get_includes('banner');
                   <input type="text" name="Robot" placeholder="Spam" value="<?php echo $_SESSION['Robot']; ?>"
                     style="display:none;">
                   <div class="contactNameTxt">
-                    <label for="contactNameTxt">Name: </label>
-                    <input type="text" class="form_fullname" name="Full_Name" placeholder="What's Your Name"
-                    value="" required />
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" class="form_fullname" name="Full_Name" placeholder="What's Your Name" value="" required />
                   </div>
                   <div class="email_address">
-                    <label for="emailaddress">Email Address:</label>
-                    <input type="email" class="form_email" name="Email_Address" placeholder="What's Your Email Address?"
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" class="form_email" name="Email_Address" placeholder="What's Your Email Address?"
                     value="" required />
                   </div>
                   <div class="messageTxt">
-                    <label for="messageTxt">Message:</label>
-                    <textarea name="Question_or_Comment"
-                    placeholder="Lets connect!"></textarea>
+                    <label for="message">Message:</label>
+                    <textarea name="Question_or_Comment" id="message" placeholder="Lets connect!"></textarea>
                   </div>  
                   <button class="form_btn btn-style" name="submit_info" type="submit">Submit</button>
                 </form>
@@ -379,6 +377,15 @@ get_includes('banner');
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "sFmGW2n_wU8yjHiLQ",
+      });
+   })();
+  </script>
+
   <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
    
   <!--?php wp_footer(); ?-->

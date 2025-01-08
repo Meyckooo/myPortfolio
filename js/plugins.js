@@ -22,7 +22,7 @@ $("main,aside,#banner,#middle,#bottom1,#bottom2,#bottom3,#bottom4,footer p")
     $(this).html(
       $(this)
         .html()
-        .replace(/Company Name/g, "<mark class='comp'>$&</mark>")
+        .replace(/MJAC/g, "<mark class='comp'>$&</mark>")
         .replace(regex1, "<mark class='main_phone'>$&</mark>")
         .replace(regex2, "<mark class='main_phone'>$&</mark>")
         .replace(regex, "<mark class='main_phone'>$&</mark>")
@@ -271,27 +271,6 @@ enableSmoothScroll('.footer_nav'); // Footer nav
     // End (AddThis) Plugins
   });
 
-  // Testimonial
-  $("#commentform").click(function () {
-    if ($("#author").val() == "") {
-      $("#author").addClass("testimonialreq");
-    } else {
-      $("#author").removeClass("testimonialreq");
-    }
-
-    if ($("#email").val() == "") {
-      $("#email").addClass("testimonialreq");
-    } else {
-      $("#email").removeClass("testimonialreq");
-    }
-
-    if ($("#comment").val() == "") {
-      $("#comment").addClass("testimonialreq");
-    } else {
-      $("#comment").removeClass("testimonialreq");
-    }
-  });
-
   //---------------------- START OF CODE (FORM ACTIVATION) -------------------------------//
   $("#submit_formmessage .form_email").change(function () {
     validateEmail();
@@ -311,11 +290,6 @@ enableSmoothScroll('.footer_nav'); // Footer nav
       $("#submit_formmessage .form_email").addClass("FormReq");
     } else {
       validateEmail();
-    }
-    if (grecaptcha.getResponse() == "") {
-      var $recaptcha = document.querySelector("#g-recaptcha-response");
-      $recaptcha.setAttribute("required", "required");
-      $(".g-recaptcha iframe").addClass("FormReq").attr("id", "recaptcha");
     }
   });
 
@@ -440,3 +414,11 @@ enableSmoothScroll('.footer_nav'); // Footer nav
 });
 
 
+function sendMail(){
+  let parms = {
+    name : document.getElementById("name").value,
+    email : document.getElementById("email").value,
+    message : document.getElementById("message").value,
+  }
+  emailjs.send('service_4jsgmnt','template_us25wty',parms).then(alert("Email has been Sent!!"));
+}
