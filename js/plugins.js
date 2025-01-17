@@ -411,12 +411,6 @@ enableSmoothScroll('.footer_nav'); // Footer nav
       from_email: document.getElementById("email").value,
       message: document.getElementById("message").value
     }
-    emailjs.send("service_p7wzd2j","template_us25wty", params).then( (response) => {
-      alert('SUCCESS!', response.status, response.text);
-    },
-    (error) => {
-      alert('FAILED.', error);
-    },
-  );
+    emailjs.send("service_p7wzd2j","template_us25wty", params).then(alert("Email Sent!!"));
   }
 
