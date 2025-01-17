@@ -272,54 +272,45 @@ enableSmoothScroll('.footer_nav'); // Footer nav
   });
 
   //---------------------- START OF CODE (FORM ACTIVATION) -------------------------------//
-  $("#submit_formmessage .form_email").change(function () {
-    validateEmail();
-  });
-  $("#submit_formmessage .form_btn").on("click", function () {
-    if ($("#submit_formmessage .form_fullname").val() == "") {
-      $("#submit_formmessage .form_fullname").addClass("FormReq");
-    } else {
-      $("#submit_formmessage .form_fullname").removeClass("FormReq");
-    }
-    if ($("#submit_formmessage .form_chkbox").not(":checked")) {
-      $("#submit_formmessage .form_chkbox").addClass("FormReq");
-    } else {
-      $("#submit_formmessage .form_chkbox").removeClass("FormReq");
-    }
-    if ($("#submit_formmessage .form_email").val() == "") {
-      $("#submit_formmessage .form_email").addClass("FormReq");
-    } else {
-      validateEmail();
-    }
-  });
+
+  
+  // $("#submit_form .form_email").change(function () {
+  //   validateEmail();
+  // });
+  
+  // $("#submit_form .form_btn").on("click", function () {
+  //   if ($("#submit_form .form_fullname").val() == "") {
+  //     $("#submit_form .form_fullname").addClass("FormReq");
+  //   } else {
+  //     $("#submit_form .form_fullname").removeClass("FormReq");
+  //   }
+  //   if ($("#submit_form .form_email").val() == "") {
+  //     $("#submit_form .form_email").addClass("FormReq");
+  //   }
+  //   else {
+  //     $("#submit_form .form_email").removeClass("FormReq");
+  //   }
+  // });
 
   // FOR EMAIL VALIDATOR
-  function validateEmail() {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    var email = $("#submit_formmessage .form_email").val();
-    if (!emailReg.test(email)) {
-      $("#submit_formmessage .form_email").addClass("FormReq");
-      $("#invalid-msg").show();
-      $("#invalid-msg").html("Please enter a valid email address.");
-    } else {
-      $("#submit_formmessage .form_email").removeClass("FormReq");
-      $("#invalid-msg").hide();
-    }
-  }
+  // function validateEmail() {
+  //   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  //   var email = $("#submit_form .form_email").val();
+  //   if (!emailReg.test(email)) {
+  //     $("#submit_form .form_email").addClass("FormReq");
+  //     $("#invalid-msg").show();
+  //     $("#invalid-msg").html("Please enter a valid email address.");
+  //   } else {
+  //     $("#submit_form .form_email").removeClass("FormReq");
+  //     $("#invalid-msg").hide();
+  //   }
+  // }
 
-  // FOR PROMPT POP-UP MESSAGE
-  $("#success .close").click(function () {
-    $("#success").fadeOut();
-    $("#recaptcha-error").fadeOut();
-  });
+  // $("#submit_form .form_btn").on("click", function () {
+  //   sendMail()
+  // });
 
-  $(".rclose").click(function () {
-    $("#recaptcha-error").fadeOut();
-  });
-
-  $("#error-msg .error-close").click(function () {
-    $("#error-msg").fadeOut();
-  });
+  
 
   //---------------------- END OF CODE (FORM ACTIVATION -------------------------------//
 
@@ -365,7 +356,7 @@ enableSmoothScroll('.footer_nav'); // Footer nav
       const lenis = new Lenis()
     
       gsap.ticker.add((time)=>{
-        lenis.raf(time * 700)
+        lenis.raf(time * 600)
       })
     
       gsap.ticker.lagSmoothing(0)
@@ -413,12 +404,19 @@ enableSmoothScroll('.footer_nav'); // Footer nav
 
 });
 
-
-function sendMail(){
-  let parms = {
-    name : document.getElementById("name").value,
-    email : document.getElementById("email").value,
-    message : document.getElementById("message").value,
+  // FOR SENDING EMAIL
+  function sendMail(){
+    let params = {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    }
+    emailjs.send("service_p7wzd2j","template_us25wty", params).then( (response) => {
+      alert('SUCCESS!', response.status, response.text);
+    },
+    (error) => {
+      alert('FAILED.', error);
+    },
+  );
   }
-  emailjs.send('service_4jsgmnt','template_us25wty',parms).then(alert("Email has been Sent!!"));
-}
+
