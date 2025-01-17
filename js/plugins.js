@@ -306,12 +306,6 @@ enableSmoothScroll('.footer_nav'); // Footer nav
   //   }
   // }
 
-  // $("#submit_form .form_btn").on("click", function () {
-  //   sendMail()
-  // });
-
-  
-
   //---------------------- END OF CODE (FORM ACTIVATION -------------------------------//
 
   new WOW().init();
