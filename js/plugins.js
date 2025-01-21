@@ -407,4 +407,3 @@ enableSmoothScroll('.footer_nav'); // Footer nav
     }
     emailjs.send("service_p7wzd2j","template_us25wty", params).then(alert("Email Sent!!"));
   }
-
