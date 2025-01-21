@@ -271,27 +271,11 @@ enableSmoothScroll('.footer_nav'); // Footer nav
     // End (AddThis) Plugins
   });
 
-  //---------------------- START OF CODE (FORM ACTIVATION) -------------------------------//
-
   
   // $("#submit_form .form_email").change(function () {
   //   validateEmail();
   // });
   
-  // $("#submit_form .form_btn").on("click", function () {
-  //   if ($("#submit_form .form_fullname").val() == "") {
-  //     $("#submit_form .form_fullname").addClass("FormReq");
-  //   } else {
-  //     $("#submit_form .form_fullname").removeClass("FormReq");
-  //   }
-  //   if ($("#submit_form .form_email").val() == "") {
-  //     $("#submit_form .form_email").addClass("FormReq");
-  //   }
-  //   else {
-  //     $("#submit_form .form_email").removeClass("FormReq");
-  //   }
-  // });
-
   // FOR EMAIL VALIDATOR
   // function validateEmail() {
   //   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -306,7 +290,30 @@ enableSmoothScroll('.footer_nav'); // Footer nav
   //   }
   // }
 
-  //---------------------- END OF CODE (FORM ACTIVATION -------------------------------//
+  
+// Bind the submit event to the form, not the button
+$("#submit_form").on("submit", function (event) {
+  event.preventDefault(); // Prevent default form submission
+  sendMail();
+});
+
+// Function to send email
+function sendMail() {
+  let params = {
+    from_name: document.getElementById("name").value,
+    from_email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  // Ensure proper usage of the promise
+  emailjs.send("service_p7wzd2j", "template_us25wty", params)
+    .then(function (response) {
+      alert("Email Sent!!"); // Show success alert
+    })
+    .catch(function (error) {
+      console.error("Failed to send email:", error); // Log any errors
+    });
+}
 
   new WOW().init();
 
@@ -356,22 +363,6 @@ enableSmoothScroll('.footer_nav'); // Footer nav
       gsap.ticker.lagSmoothing(0)
     }
   }
-
-  // Darkmode
-  
-  // (function checkDarkMode() {
-  //   const isDarkMode = document
-  //     .querySelector(".dracula-toggle")
-  //     .classList.contains("mode-dark");
-  //   if (isDarkMode) {
-  //     document.body.classList.add("dark-mode");
-  //   }
-  // })();
-
-  // $(".dracula-toggle").click(function () {
-  //   document.body.classList.toggle("dark-mode");
-  // });
-
   
     // "Clickable Nav Mobile View"
     // Remove 'active' class from the body
@@ -398,12 +389,16 @@ enableSmoothScroll('.footer_nav'); // Footer nav
 
 });
 
-  // FOR SENDING EMAIL
-  function sendMail(){
-    let params = {
-      from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    }
-    emailjs.send("service_p7wzd2j","template_us25wty", params).then(alert("Email Sent!!"));
-  }
+// $("#submit_form .form_btn").on("submit", function () {
+//   sendMail();
+// });
+
+//   // FOR SENDING EMAIL
+//   function sendMail(){
+//     let params = {
+//       from_name: document.getElementById("name").value,
+//       from_email: document.getElementById("email").value,
+//       message: document.getElementById("message").value
+//     }
+//     emailjs.send("service_p7wzd2j","template_us25wty", params).then(alert("Email Sent!!"));
+//   }
