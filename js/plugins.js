@@ -271,26 +271,8 @@ enableSmoothScroll('.footer_nav'); // Footer nav
     // End (AddThis) Plugins
   });
 
-  
-  // $("#submit_form .form_email").change(function () {
-  //   validateEmail();
-  // });
-  
-  // FOR EMAIL VALIDATOR
-  // function validateEmail() {
-  //   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  //   var email = $("#submit_form .form_email").val();
-  //   if (!emailReg.test(email)) {
-  //     $("#submit_form .form_email").addClass("FormReq");
-  //     $("#invalid-msg").show();
-  //     $("#invalid-msg").html("Please enter a valid email address.");
-  //   } else {
-  //     $("#submit_form .form_email").removeClass("FormReq");
-  //     $("#invalid-msg").hide();
-  //   }
-  // }
+// FORM SEND EMAIL
 
-  
 // Bind the submit event to the form, not the button
 $("#submit_form").on("submit", function (event) {
   event.preventDefault(); // Prevent default form submission
@@ -388,17 +370,3 @@ function sendMail() {
 }
 
 });
-
-// $("#submit_form .form_btn").on("submit", function () {
-//   sendMail();
-// });
-
-//   // FOR SENDING EMAIL
-//   function sendMail(){
-//     let params = {
-//       from_name: document.getElementById("name").value,
-//       from_email: document.getElementById("email").value,
-//       message: document.getElementById("message").value
-//     }
-//     emailjs.send("service_p7wzd2j","template_us25wty", params).then(alert("Email Sent!!"));
-//   }
