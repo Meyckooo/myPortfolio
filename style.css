@@ -474,7 +474,7 @@ footer{}
 	.footer_nav{ }
 	.footer_nav ul{ margin: 40px auto 0; padding: 0; text-align: center; list-style: none; display: flex;justify-content: space-evenly;gap: 15px;}
 	.footer_nav ul li{display: inline-block; vertical-align: top;position:relative;}
-	.footer_nav ul li a{display: block;  color: var(--primaryColor);padding: 0 0;font: 602 16px/58px var(--primaryHeading);margin: 0 0;}
+	.footer_nav ul li a{display: block;  color: var(--primaryColor);padding: 0 0;font: 600 16px/58px var(--primaryHeading);margin: 0 0;}
 	.footer_nav ul li a:hover, .footer_nav ul li a:active, .footer_nav ul li.current_page_item a{}
 .footer_nav ul li a:hover:after, .footer_nav ul li.current_page_item a:after{width: 100%;}
   .footer_nav ul li a:active:after, .footer_nav ul li a:after{content: '';position: absolute;bottom: 0;left: 0;width: 0;height: 3px;border-radius: 5px;background: var(--primaryColor);transition: all .5s ease-in-out;right: 0;margin: 0 auto;}

@@ -140,7 +140,7 @@ attributes.forEach((attr) => {
         $('.main_logo').insertAfter('.logo_wrap');
         $('#nav_area').insertBefore('header');
   
-      } else if(window_width > 800 && window_width <= 1000){
+      } else if(window_width > 800 && window_width <= 1024){
         $('.main_logo').prependTo('.header_con');
         $('#nav_area').insertAfter('header');
       } else {
