@@ -210,12 +210,52 @@ attributes.forEach((attr) => {
     return false;
   });
 
-// Function to handle smooth scrolling
+// // Function to handle smooth scrolling
+// function enableSmoothScroll(navSelector) {
+//   const navLinks = document.querySelectorAll(`${navSelector} a`);
+  
+//   navLinks.forEach((link, index) => {
+//     if (index === 0 ) {
+//       // Reload the page when the first link (Home) is clicked
+//       link.addEventListener('click', function (event) {
+//         event.preventDefault(); // Prevent default behavior
+//         window.location.reload(); // Reload the page
+//       });
+//       return; // Skip the rest of the loop for the first link
+//     }
+
+//     // Add smooth scrolling to other links
+//     link.addEventListener('click', function (event) {
+//       event.preventDefault(); // Prevent default jump behavior
+      
+//       const targetId = this.getAttribute('href').substring(1); // Remove the leading #
+//       const targetElement = document.getElementById(targetId); // Get the target element
+      
+//       if (targetElement) {
+//         // If the target element exists, scroll to it
+//         targetElement.scrollIntoView({
+//           behavior: 'smooth',
+//           block: 'start',
+//         });
+//       } else {
+//         window.location.reload(); // Reload the page
+//       }
+//     });
+//   });
+// }
+
+// // Apply smooth scrolling to both navs
+// enableSmoothScroll('nav'); // Top nav
+// enableSmoothScroll('.footer_nav'); // Footer nav
+
+
+// Function to handle smooth scrolling with offset
 function enableSmoothScroll(navSelector) {
   const navLinks = document.querySelectorAll(`${navSelector} a`);
-  
+  const offset = -120; // Offset value (adjust as needed)
+
   navLinks.forEach((link, index) => {
-    if (index === 0 ) {
+    if (index === 0) {
       // Reload the page when the first link (Home) is clicked
       link.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent default behavior
@@ -227,18 +267,21 @@ function enableSmoothScroll(navSelector) {
     // Add smooth scrolling to other links
     link.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent default jump behavior
-      
+
       const targetId = this.getAttribute('href').substring(1); // Remove the leading #
       const targetElement = document.getElementById(targetId); // Get the target element
-      
+
       if (targetElement) {
-        // If the target element exists, scroll to it
-        targetElement.scrollIntoView({
+        // Calculate the target position with the offset
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
+
+        // Scroll to the target position with smooth behavior
+        window.scrollTo({
+          top: targetPosition,
           behavior: 'smooth',
-          block: 'start',
         });
       } else {
-        window.location.reload(); // Reload the page
+        window.location.reload(); // Reload the page if the target doesn't exist
       }
     });
   });
@@ -368,6 +411,34 @@ function sendMail() {
     document.querySelector('body').classList.remove('active');
   });
 }
+
+
+const boxes = document.querySelectorAll('.mytech_info ul li');
+
+boxes.forEach((box) => {
+  const text = box.querySelector('.shadow-text');
+
+  box.addEventListener('mousemove', (e) => {
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Mouse X position within the box
+    const y = e.clientY - rect.top; // Mouse Y position within the box
+
+    // Calculate shadow offsets based on mouse position
+    const shadowX = (x / rect.width) * 20 - 10; // Adjust multiplier for intensity
+    const shadowY = (y / rect.height) * 20 - 10; // Adjust multiplier for intensity
+
+    // Update the text shadow dynamically
+    text.style.textShadow = `${shadowX}px ${shadowY}px 10px #00ff94,
+                             ${shadowX * 1.5}px ${shadowY * 1.5}px 20px #00ff94,
+                             ${shadowX * 2}px ${shadowY * 2}px 30px #00ff94,
+                             ${shadowX * 2.5}px ${shadowY * 2.5}px 40px #00ff94`;
+  });
+
+  box.addEventListener('mouseleave', () => {
+    // Reset the shadow when the mouse leaves
+    text.style.textShadow = 'none';
+  });
+});
 
 });
 
