@@ -10,7 +10,7 @@ $(document).ready(function () {
     window_width = $(window).width();
 
 // Company name and phone number on content area
-$("main,aside,#banner,#middle,#bottom1,#bottom2,#bottom3,#bottom4,footer p")
+$("main,aside,#banner,#myservices,#myworks,#myinformation,footer p")
   .not(".woocommerce")
   .each(function () {
     const regex1 =
@@ -253,7 +253,7 @@ enableSmoothScroll('.footer_nav'); // Footer nav
     // fade in fade out button
     var windowScroll = $(this).scrollTop();
 
-    if (windowScroll > webHeight * 0.5 && window_width <= 600) {
+    if (windowScroll > webHeight * 0.45 && window_width <= 600) {
       $(".back_top").fadeIn();
     } else {
       $(".back_top").fadeOut();
