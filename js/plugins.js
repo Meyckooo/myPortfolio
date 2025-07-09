@@ -170,7 +170,6 @@ attributes.forEach((attr) => {
   // Reset all configs when width > 800
   $(window).resize(function () {
     window_width = $(this).width();
-
     swap_this();
 
     dynamicMinHeight(".sample_class");
@@ -187,18 +186,6 @@ attributes.forEach((attr) => {
     }
   });
 
-  $(".rslides").responsiveSlides();
-  $(".box_skitter_large").skitter({
-    theme: "minimalist",
-    numbers_align: "center",
-    progressbar: false,
-    navigation: false,
-    numbers: false,
-    dots: false,
-    preview: false,
-    interval: 4000,
-  });
-
   $(".back_top").click(function () {
     // back to top
     $("html, body").animate(
@@ -209,45 +196,6 @@ attributes.forEach((attr) => {
     );
     return false;
   });
-
-// // Function to handle smooth scrolling
-// function enableSmoothScroll(navSelector) {
-//   const navLinks = document.querySelectorAll(`${navSelector} a`);
-  
-//   navLinks.forEach((link, index) => {
-//     if (index === 0 ) {
-//       // Reload the page when the first link (Home) is clicked
-//       link.addEventListener('click', function (event) {
-//         event.preventDefault(); // Prevent default behavior
-//         window.location.reload(); // Reload the page
-//       });
-//       return; // Skip the rest of the loop for the first link
-//     }
-
-//     // Add smooth scrolling to other links
-//     link.addEventListener('click', function (event) {
-//       event.preventDefault(); // Prevent default jump behavior
-      
-//       const targetId = this.getAttribute('href').substring(1); // Remove the leading #
-//       const targetElement = document.getElementById(targetId); // Get the target element
-      
-//       if (targetElement) {
-//         // If the target element exists, scroll to it
-//         targetElement.scrollIntoView({
-//           behavior: 'smooth',
-//           block: 'start',
-//         });
-//       } else {
-//         window.location.reload(); // Reload the page
-//       }
-//     });
-//   });
-// }
-
-// // Apply smooth scrolling to both navs
-// enableSmoothScroll('nav'); // Top nav
-// enableSmoothScroll('.footer_nav'); // Footer nav
-
 
 // Function to handle smooth scrolling with offset
 function enableSmoothScroll(navSelector) {
@@ -373,7 +321,6 @@ function sendMail() {
     });
   });
 
-
   // Smooth Scroll
 
   if ($("body").hasClass("front_page")){
@@ -382,13 +329,13 @@ function sendMail() {
       const lenis = new Lenis()
     
       gsap.ticker.add((time)=>{
-        lenis.raf(time * 600)
+        lenis.raf(time * 700)
       })
     
       gsap.ticker.lagSmoothing(0)
     }
   }
-  
+
     // "Clickable Nav Mobile View"
     // Remove 'active' class from the body
     document.querySelector('body').classList.remove('active');

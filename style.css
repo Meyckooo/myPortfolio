@@ -107,7 +107,7 @@ header{ }
 .fixed{}
 .header_holder { }
 .header_con{min-height:0;padding:0;}
-.main_logo{ position: absolute;width: 100%;max-width: 200px;left: 0;top: 50%;transform: translatey(-50%);}
+.main_logo{ position: absolute;width: 100%;max-width: 100px;left: 0;top: 50%;transform: translatey(-50%);}
 .main_logo img{ }
 .head_info{ display: flex;align-items: center;gap: 115px;}
 .header_info { display: flex;gap: 80px;}
@@ -189,7 +189,7 @@ header{ }
 .nav_toggle_button i{cursor: pointer;}
 
 /*Burger Color*/
-.nav_toggle_button .toggle_holder{position: absolute;top: 50%;right: 0;transform: translateY(-50%);}
+.nav_toggle_button .toggle_holder{position: absolute;top: 50%;right: 15px;transform: translateY(-50%);}
 .nav_toggle_button .hamburger{}
 .nav_toggle_button .hamburger-inner, .nav_toggle_button .hamburger-inner:before, .nav_toggle_button .hamburger-inner:after{background:var(--primaryColor);}
 .nav_toggle_button small{text-transform:uppercase;font-weight:bold;font-size:13px;color:var(--primaryColor);display:block; line-height: 100%; text-align: center;}
@@ -215,7 +215,7 @@ header{ }
 .slider video { display: block; width: 100%; max-width: 100%; height: auto; }
 .mobi_ban{display: none;}
 .rslides { display: none;}
-.bnr_design{position: absolute;right: 50px;top: 220px;width: 40%;max-width: 100%;}
+.bnr_design{position: absolute;right: 0;top: 220px;width: 49%;max-width: 100%;}
 .bnr_design figure{}
 .bnr_design figure img{}
 
@@ -504,7 +504,7 @@ footer{}
 	.contact_info_ul ul li:first-child:before{content:url(images/ftr-phone-icon.png);}
 	.contact_info_ul ul li:last-child:before{content:url(images/ftr-email-icon.png);}
 
-	.footer_logo_holder { width: 100%;max-width: 350px;margin: 0 auto;}
+	.footer_logo_holder { width: 100%;max-width: 100px;margin: 0 auto;}
 	.footer_logo{}
 	.footer_logo img{}
 
