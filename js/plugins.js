@@ -151,28 +151,10 @@ attributes.forEach((attr) => {
 
 	swap_this();
 
-  // For Dark mode change position
-  // (() => {
-	// 	$(".dracula-toggle-wrap").appendTo(".dark_mode_toggle");
-	//   })();
-
-  const dynamicMinHeight = (targetElement) => {
-    const targetElements = [...document.querySelectorAll(targetElement)];
-    if (targetElements.length <= 0 || !targetElement) return;
-    targetElements.forEach((el) => (el.style.minHeight = "auto"));
-    const targetElementsHeight = targetElements.map((el) => el.offsetHeight);
-    const heighestHeight = Math.max(...targetElementsHeight);
-    targetElements.forEach((el) => (el.style.minHeight = `${heighestHeight}px`));
-  };
-
-  dynamicMinHeight(".sample_class");
-
   // Reset all configs when width > 800
   $(window).resize(function () {
     window_width = $(this).width();
     swap_this();
-
-    dynamicMinHeight(".sample_class");
 
     if (window_width > 800) {
       $(".nav_toggle_button").removeClass("active");
@@ -290,27 +272,6 @@ function sendMail() {
 
   new WOW().init();
 
-  $(".owl-carousel").owlCarousel({
-    items: 3,
-    nav: true,
-    dots: true,
-    loop: true,
-    margin: 0,
-    // navText:["&#x2190;","&#x2192;"],
-    responsive: {
-      291: {
-        items: 1,
-      },
-      751: {
-        items: 2,
-      },
-      1011: {
-        items: 3,
-      },
-    },
-  });
-
-
   $(document).ready(function(){
     $('.slick-slider').slick({
       dots: true,
@@ -324,16 +285,13 @@ function sendMail() {
   // Smooth Scroll
 
   if ($("body").hasClass("front_page")){
-
-    if(window_width > 1024){
-      const lenis = new Lenis()
-    
-      gsap.ticker.add((time)=>{
-        lenis.raf(time * 700)
-      })
-    
-      gsap.ticker.lagSmoothing(0)
-    }
+    var typed = new Typed(".auto-type",{
+      strings : ["Hello I am,"],
+      typeSpeed : 100,
+      backSpeed : 100,
+      loop : true,
+    });
+  
   }
 
     // "Clickable Nav Mobile View"
@@ -386,6 +344,48 @@ boxes.forEach((box) => {
     text.style.textShadow = 'none';
   });
 });
+
+const coords = { x: 0, y: 0 };
+const colors = [
+  "#00FF94", "#64fcd9", "#00FF94", "#64fcd9",
+  "#00FF94", "#64fcd9", "#00FF94", "#64fcd9",
+  "#00FF94", "#64fcd9", "#00FF94"
+];
+// Initialize each circle
+$(".custom-cursor").each(function (i) {
+  $(this).data({ x: 0, y: 0 }).css("background-color", colors[i % colors.length]);
+});
+
+// Track mouse position
+$(window).on("mousemove", e => {
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+});
+
+// Animate cursor trail
+(function animate() {
+  let { x, y } = coords;
+
+  $(".custom-cursor").each(function (i, el) {
+    const $el = $(el), total = $(".custom-cursor").length;
+    $el.css({
+      left: `${x - 12}px`,
+      top: `${y - 12}px`,
+      transform: `scale(${(total - i) / total})`
+    });
+
+    const data = $el.data();
+    data.x = x;
+    data.y = y;
+
+    const next = $(".custom-cursor").eq(i + 1).data() || $(".custom-cursor").eq(0).data();
+    x += (next.x - x) * 0.3;
+    y += (next.y - y) * 0.3;
+  });
+
+  requestAnimationFrame(animate);
+})();
+  
 
 });
 

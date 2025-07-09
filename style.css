@@ -47,7 +47,7 @@ mark {background-color: transparent;color:inherit;}
 
 /*preset*/
 body:before{content: "";background: url(screenshot.jpg);width: 100%;height: 100%;position: absolute;inset: 0;}
-body{font-family: var(--bodyFont); font-size: var(--bodySize); color:var(--bodyColor);position:relative;font-weight: var(--bodyWeight); max-width: 1920px; margin: 0 auto; line-height: var(--lineheight); overflow-x: clip;background: var(--black);}
+body{cursor: none; font-family: var(--bodyFont); font-size: var(--bodySize); color:var(--bodyColor);position:relative;font-weight: var(--bodyWeight); max-width: 1920px; margin: 0 auto; line-height: var(--lineheight); overflow-x: clip;background: var(--black);}
 body.active{overflow: hidden;width:100%;height:100%;position:fixed!important;}
 a{ text-decoration:none; -webkit-transition: all .3s linear;transition: all .3s linear;}
 img{max-width: 100%; vertical-align: top; image-rendering: -webkit-optimize-contrast;}
@@ -58,7 +58,6 @@ strong , b{ font-weight: bold;}
 em, i{font-style: italic;}
 input[type="submit"]{cursor: pointer;}
 a[href^="tel:"]{color: inherit!important; text-decoration: none;}
-
 .clearfix:before, .clearfix:after { content:""; display: table; clear: both; }
 .clearfix {clear: both; overflow: hidden;}
 .comp{color:var(--primaryColor); font-weight:bold; }
@@ -104,7 +103,6 @@ html {scroll-behaviour: smooth ;}
 /*header*/
 header{ }
 .header_fix { position: fixed;width: 100%;top: 0;z-index: 999;backdrop-filter: blur(25px); box-shadow: 3px 3px 3px rgba(0, 255, 148, 0.5);}
-.fixed{}
 .header_holder { }
 .header_con{min-height:0;padding:0;}
 .main_logo{ position: absolute;width: 100%;max-width: 100px;left: 0;top: 50%;transform: translatey(-50%);}
@@ -226,8 +224,8 @@ header{ }
 .bnr_info_title-1::before, .bnr_info_title-2::before{ text-shadow: -5px 0 #59FFB9; animation: glitch-1 2s infinite linear alternate-reverse; }
 .bnr_info_title-1::after, .bnr_info_title-2::after{ text-shadow: -5px 0 #7218FA; animation: glitch-2 2s infinite linear alternate-reverse; }
 
-.bnr_info h2 span{display:block;margin-top: 5px;}
-.bnr_info h2 small { display: block;line-height: 100%;font-size: 18px;margin-bottom: 10px;color: #fff; font-weight: 400; text-transform: none;}
+.bnr_info h2 cite{display:block;margin-top: 5px;}
+.bnr_info h2 span {line-height: 100%;font-size: 18px;margin-bottom: 10px;color: #fff; font-weight: 400; text-transform: none;}
 .bnr_info p{margin-block: 30px 30px;}
 .bnr_info a{margin: 0;}
 .bnr_info a:hover{}
@@ -704,79 +702,7 @@ center; margin: 20px auto 0; box-shadow: 0 0 25px 0 rgba(0 0 0/0.1); }
 .text_style:hover:before{width: 90%;}
 /* End of Button styles */
 
-
-	
-/* NH Styles */
-	/* About Us Mission Vision Other Design Color */
-	/* .about_us_boxes section { width: 48%; padding: 90px 25px 80px; background: var(--primaryColor); border-radius: 14px;
-		position: relative;}
-	.about_us_boxes section:last-child{background: var(--secColor);} */
-	
-	.nh_clearfix {clear: both; overflow: hidden;}
-	.nh_h2{font-size: 35px; color: #000; margin: 20px 0 40px;}
-	.nh_image{float: right; margin: 0 0 20px 20px;}
-	.nh_image img{border-radius: 10px;}
-	.about_us_boxes { margin: 110px 0 0; display: flex; justify-content: space-evenly; text-align: center; flex-wrap: wrap;
-	column-gap: 10px; }
-	.about_us_boxes section { width: 48%; padding: 90px 35px 80px;  background: linear-gradient(to right,var(--primaryColor) 50%, var(--secColor));  border-radius: 14px; position: relative;}
-	.about_us_boxes section::before { content: ''; width: 90%; height: 90%; position: absolute; border: 1px solid var(--white); left: 50%; top: 50%; transform: translate(-50%,-50%); border-radius: 10px; }
-	.about_us_boxes section h2 { font-size: 35px; color: #fff; line-height: 100%; }
-	.about_us_boxes section h2:before{position: absolute; top: -70px; left: 0; right: 0; margin: 0 auto; width: max-content;
-	padding: 15px; background: var(--secColor); border-radius: 100%; box-shadow: 0 0 3px 3px rgba(255,255,255,0.1);}
-	.about_us_boxes section:first-child h2:before{content: url(images/w-mis1.png);}
-	.about_us_boxes section:last-child h2:before{content: url(images/w-vis1.png); background: var(--primaryColor)}
-	.about_us_boxes section p { color: #fff; }
-
-	/* Template 1 400 x 267*/
-	/* Simple Design */
-	.serv_boxes { display:flex; flex-wrap:wrap; justify-content:center; row-gap:35px; column-gap:25px; margin:45px 0 }
-	.serv_boxes section { max-width:400px; width:29%; position:relative; text-align:center; background:var(--primaryColor);
-	border-radius:15px }
-	.serv_boxes section h2 { display:flex; flex-direction:column; justify-content:center; align-items:center;
-	min-height:56px; color:#fff; margin:25px 10px; }
-	.serv_boxes section a { position:absolute; top:0; left:0; right:0; width:100%; height:100% }
-	.serv_boxes section:hover { transform: scale(1.02);}
-	.serv_boxes section:after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 0;
-	background: var(--secColor); z-index: -1; transition: all 0.5s ease-in-out; border-radius: 15px; }
-	.serv_boxes section:hover:after { top: 0; height: 100%; }
-
-	/* Same ra sa template 1 but lain og design */
-	/* Blury hover design */
-	/* .serv_boxes{ display: flex; justify-content: center; gap: 40px 25px;  flex-wrap: wrap; pointer-events: none;}
-	.serv_boxes section{ text-align: center; width: 25%; min-height: 0; background: linear-gradient(to right, var(--secColor) 20%, var(--primaryColor) 80%); position: relative; color: #fff; max-width: 400px; transition: all .3s ease; border-radius: 20px; overflow: hidden;}
-	.serv_boxes section figure{ overflow: hidden; filter: grayscale(1);}
-	.serv_boxes section figure img{ max-width: initial; margin-left: 50%; transform: translateX(-50%); }
-	.serv_boxes section h2 { font-size:25px; margin: 0; padding: 25px 15px; display: flex; flex-direction: column; justify-content: center; line-height: 120%; color: var(--white);}
-	.serv_boxes section h2 small{ }
-	.serv_boxes section h2 span{display: inline;}
-	.serv_boxes section p{margin:0;}
-	.serv_boxes section a{ position: absolute; inset: 0; pointer-events: auto;}
-	.serv_boxes section:hover { transform: scale(1.02);}
-	.serv_boxes section:hover figure { filter: grayscale(0);}
-	.serv_boxes section:before{content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(0 0 0/0.1); opacity: 0; backdrop-filter: blur(3px);}
-	.serv_boxes:hover section:before{opacity:1;}
-	.serv_boxes section:hover:before{opacity: 0;} */
-
-	/* Template 2 175x175 */
-	/* .serv_box{margin: 50px 0 50px;}
-	.serv_box ul { display: flex; justify-content: space-evenly; gap: 20px 15px; text-align: center; flex-wrap: wrap;}
-	.serv_box ul li { width: 30%; max-width: 100%; min-height: 350px; background: var(--primaryColor); color: var(--white); padding: 40px 20px 135px; border-radius: 45px; position: relative; z-index: 1; }
-	.serv_box ul li::before { content: ''; background: var(--primaryColor); position: absolute; width: 100%; max-width: 100%; border-radius: 45px; opacity: 0.3; right: -20px; bottom: -10px; height: 100%; z-index: -1; transition: all .5s ease-in-out; }
-	.serv_box ul li:hover::before { right: 0; bottom: 0; background: var(--secColor); opacity: unset; }
-	.serv_box ul li figure {margin: 0 auto; border-radius: 100%; width: max-content; max-width: 100%; overflow: hidden; background: var(--white);}
-	.serv_box ul li figure figcaption { font-size: 25px; position: absolute; top: 70%; left: 0; right: 0;  padding: 0 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
-	.serv_box ul li figure figcaption span{display: block; line-height: 150%;}
-	.serv_box ul li a{position: absolute; inset: 0;}
-	.serv_box ul li p{margin: 0;} */
-
-	/*10 above services -> Box Services Template 3 */
-	/* .services_box { text-align: center; margin: 30px 0; }
-	.services_box ul { display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 40px 10px; }
-	.services_box ul li { width: 24%; border-radius: 20px; outline: 1px solid var(--primaryColor); padding: 25px 15px; transition: all 0.5s ease-in-out; color: var(--secTxtColor); }
-	.services_box ul li:hover { transform: scale(0.9); background: var(--secColor); color: var(--white); outline: transparent; filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000); }
-	.services_box ul li h2 { margin: 0; display: flex; flex-direction: column; justify-content: center; font-size: 20px; color: inherit; line-height: 150%;}
-	.services_box ul li a { position: absolute; inset: 0; } */
-
+.custom-cursor { width: 20px; aspect-ratio: 1/1; border-radius: 0 70px 80px 80px; background-color: #000; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999999; }
 
 	/* Cookies */
 	.cky-revisit-bottom-left { right: auto !important; left: 15px !important; bottom: 85px !important; background: var(--primaryColor) !important; filter: drop-shadow(0 0 1px rgb(255, 255, 255)) drop-shadow(0 0 1px rgb(255, 255, 255)) drop-shadow(0 0 1px rgb(255, 255, 255));}
