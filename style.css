@@ -137,10 +137,10 @@ header{ }
 .page_nav {  text-align: center;position: relative;min-height: 0;padding: 40px 10px 52px;}
 .page_nav ul{display: flex;justify-content: flex-end;gap: 25px;}
 .page_nav ul li{display:inline-block;vertical-align: top; position:relative;}
-.page_nav ul li a{display:block;   color:var(--primaryColor);   padding:0 0; font: 602 16px/58px var(--primaryHeading);margin: 0 0;}
+.page_nav ul li a{display:block;   color:var(--white);   padding:0 0; font: 602 16px/58px var(--primaryHeading);margin: 0 0;}
 .page_nav ul li a:hover, .page_nav ul li a:active, .page_nav ul li.current_page_item > a{}
 .page_nav ul li a:hover::after, .page_nav ul li.current_page_item > a:after{width: 100%;}
-.page_nav ul li a:active:after, .page_nav ul li a:after{content:'';position: absolute;bottom: 0;left: 0;width: 0;height: 3px;border-radius: 5px;background: var(--primaryColor);transition: all .5s ease-in-out;right: 0;margin: 0 auto;}
+.page_nav ul li a:active:after, .page_nav ul li a:after{content:'';position: absolute;bottom: 0;left: 0;width: 0;height: 3px;border-radius: 5px;background: var(--white);transition: all .5s ease-in-out;right: 0;margin: 0 auto;}
 .page_nav ul li:last-child:after{display:none;}
 .page_nav ul li:first-child a { padding-left: 0; margin-left: 0;}
 .page_nav ul li:last-child a { padding-right: 0; margin-right: 0;}
