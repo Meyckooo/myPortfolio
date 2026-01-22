@@ -170,9 +170,13 @@
             <div class="myprojects_info">
                 <h2 class="h2_title">My Projects</h2>
             </div>
-            
-            <div class="myprojects_boxes slick-slider">
 
+            <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'dynamic')" id="defaultOpen">Dynamic</button>
+              <button class="tablinks" onclick="openCity(event, 'elementor')">Elementor</button>
+            </div>
+            <div id="dynamic" class="tabcontent">
+              <div class="myprojects_boxes slick-slider">
               <section class="myprojects_box1">
                   <figure><img src="images/bottom/work1.jpg" alt="Sappihire Medical Staffing"><figcaption>Project1</figcaption></figure>
                   <div class="boxes_btn">
@@ -223,6 +227,12 @@
               </section>
 
             </div>
+            </div>
+            
+            <div id="elementor" class="tabcontent">
+              <p class="upcoming">Elementor Website</p>
+            </div>
+            
           </div>
         </div>
       </div>
