@@ -421,7 +421,7 @@ main .h1_title:after{width: 110%;}
 	}
 
 	.mytech_info .image-container figure figcaption{
-	font: 800 13px/100% var(--primaryHeading);
+	font: 800 16px/100% var(--primaryHeading);
 	text-transform: uppercase;
 	color: var(--white);
 	}
