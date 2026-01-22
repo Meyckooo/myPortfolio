@@ -10,7 +10,7 @@ $(document).ready(function () {
     window_width = $(window).width();
 
 // Company name and phone number on content area
-$("main,aside,#banner,#myservices,#myworks,#myinformation,footer p")
+$("main,aside,#banner,#myservices,#myprojects,#myinformation,footer p")
   .not(".woocommerce")
   .each(function () {
     const regex1 =
@@ -274,11 +274,25 @@ function sendMail() {
 
   $(document).ready(function(){
     $('.slick-slider').slick({
-      dots: true,
+    dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 1,
+    slidesToShow: 3,
     autoplay: true,
+    responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
     });
   });
 
@@ -318,7 +332,7 @@ function sendMail() {
 }
 
 
-const boxes = document.querySelectorAll('.mytech_info ul li');
+const boxes = document.querySelectorAll('.mytech_info .image-container');
 
 boxes.forEach((box) => {
   const text = box.querySelector('.shadow-text');
@@ -388,4 +402,30 @@ $(window).on("mousemove", e => {
   
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carouselTrack');
+      const items = track.getElementsByClassName('carousel-item');
+      
+      // Clone all items
+      Array.from(items).forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      // Calculate total width and set animation
+      const totalWidth = items.length * (items[0].offsetWidth + 10); // width + gap
+      const duration = totalWidth / 300; // Adjust speed by changing this divisor
+
+      track.style.animation = `scrollX ${duration}s linear infinite`;
+      
+      // Pause on hover
+      track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
+      
+      track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+      });
+    });
 

@@ -29,7 +29,7 @@ and (max-width : 1400px) {
   /*Main Area*/
   .main_con { }
   /*Bottom Area*/
-  .myworks_con { }
+  .myprojects_con { }
   
   .myinformation_con { }
   .myinformation_figure_icon{right:0;}
@@ -56,7 +56,8 @@ and (max-width : 1300px) {
   /*Main Area*/
 
   /*Bottom Area*/
-
+  .myprojects_boxes .slick-prev{top: 108%;left: -60px;right: 0;margin: 0 auto;line-height: 100%;}
+  .myprojects_boxes .slick-next{top: 108.5%;left: 0;right: -60px;margin: 0 auto;}
   /*Footer Area*/
   .footer_nav ul li a { }
 }
@@ -73,8 +74,7 @@ and (max-width : 1200px) {
   /*Main Area*/
   main .h1_title{font-size: 50px;}
   /*Bottom Area*/
-  .myworks_boxes .slick-prev{top: 108%;left: -60px;right: 0;margin: 0 auto;line-height: 100%;}
-  .myworks_boxes .slick-next{top: 108.5%;left: 0;right: -60px;margin: 0 auto;}
+
   .myinformation_figure_icon{width: 58%;top: 390px;}
   /*Footer Area*/
   .footer_nav ul li a { }
@@ -236,26 +236,26 @@ and (max-width : 1000px) {
       .intro_txt{width:100%;}
 
   /*Bottom Area*/
-  #myworks{padding: 40px 25px 80px;}
-  #myworks:after,#myworks:before { display: none; }
-	 .myworks_con{min-height:0;padding:0;display: block;}
-	  .myworks_boxes{ position: static; flex-wrap: wrap; width: 100%; justify-content: space-evenly; gap: 40px 15px; margin-top: 40px; max-width: 100%; }
-	  .myworks_boxes section {  text-align: center;  max-width: 100%; }
-    .myworks_boxes section h2 { width: 100%; padding: 0; max-width: 100%; margin-bottom: 25px; }
-    .myworks_boxes section h2:before { display: block; position: static; margin-bottom: 10px; }
-    .myworks_boxes section a {}
-    .myworks_boxes section a:hover {}
-    #myworks::before { display: none; }
-  #myworks::after { display: none; }
-  .myworks_info { position: static; width: 100%; text-align: center; max-width: 100%; padding: 0; margin: 0; }
-  .myworks_info h2 { font-size: 50px; width: max-content;   padding: 0; margin: 0 auto 70px;}
-  .myworks_info p { width: 100%; max-width: 100%; padding: 0;  margin-block: 30px;}
-  .myworks_info a { margin: 0 auto; }
+  #myprojects{padding: 40px 25px 80px;}
+  #myprojects:after,#myprojects:before { display: none; }
+	 .myprojects_con{min-height:0;padding:0;display: block;}
+	  .myprojects_boxes{ position: static; flex-wrap: wrap; width: 100%; justify-content: space-evenly; gap: 40px 15px; margin-top: 40px; max-width: 100%; }
+	  .myprojects_boxes section {  text-align: center;  max-width: 100%; }
+    .myprojects_boxes section h2 { width: 100%; padding: 0; max-width: 100%; margin-bottom: 25px; }
+    .myprojects_boxes section h2:before { display: block; position: static; margin-bottom: 10px; }
+    .myprojects_boxes section a {}
+    .myprojects_boxes section a:hover {}
+    #myprojects::before { display: none; }
+  #myprojects::after { display: none; }
+  .myprojects_info { position: static; width: 100%; text-align: center; max-width: 100%; padding: 0; margin: 0; }
+  .myprojects_info h2 { font-size: 50px; width: max-content;   padding: 0; margin: 0 auto 70px;}
+  .myprojects_info p { width: 100%; max-width: 100%; padding: 0;  margin-block: 30px;}
+  .myprojects_info a { margin: 0 auto; }
 
   #mytech{padding: 40px 15px;}
   .mytech_con{padding:0;}
   .mytech_info ul { justify-content: space-evenly; gap: 40px 15px; flex-wrap: wrap; }
-  
+  .mytech_info h2 { font-size: 50px; width: max-content;  margin: 0 auto 70px; }
 
 #myinformation{padding: 40px 15px;}
 #myinformation:before, #myinformation:after { display: none; }
@@ -382,7 +382,7 @@ and (max-width : 800px) {
   main .h1_title::after { width: 80%;}
 
   /*Bottom Area*/
-  .myworks_info p::before { width: 80%;}
+  .myprojects_info p::before { width: 80%;}
   .myinformation_form_parent form input{width: 100%;}
 
   /*Footer Area*/
@@ -444,9 +444,9 @@ header{padding:0;}
   /*Main Area*/
   main .h1_title:after{top: 120%;}
   /*Bottom Area*/
-  .myworks_boxes section{display:block;width: 400px; max-width: 100%; margin:0 auto;}
-  .myworks_boxes .slick-prev{top: 109%;}
-  .myworks_boxes .slick-next{top: 109.5%;}
+  .myprojects_boxes section{display:block;width: 400px; max-width: 100%; margin:0 auto;}
+  .myprojects_boxes .slick-prev{top: 109%;}
+  .myprojects_boxes .slick-next{top: 109.5%;}
   .myinformation_boxes section { display: block; width: 400px; max-width: 100%; margin: 0 auto; }
   .myinformation_form_parent form input { width: 100%; }
   .myinformation_form_parent form button {max-width: 100%; }
@@ -508,8 +508,8 @@ and (max-width : 500px) {
   .bnr_info h2{font-size: 37px;}
   main .h1_title{}
   .myservices_info h2{}
-  .myworks_info h2{}
-  .myworks_boxes .slick-prev{top: 110.8%;}
-  .myworks_boxes .slick-next{top: 111.5%;}
+  .myprojects_info h2{}
+  .myprojects_boxes .slick-prev{top: 110.8%;}
+  .myprojects_boxes .slick-next{top: 111.5%;}
   .myinformation_info h2:after{width: 100%;}
 }
