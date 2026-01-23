@@ -151,9 +151,22 @@ attributes.forEach((attr) => {
 
 	swap_this();
 
+   const dynamicMinHeight = (targetElement) => {
+    const targetElements = [...document.querySelectorAll(targetElement)];
+    if (targetElements.length <= 0 || !targetElement) return;
+    targetElements.forEach((el) => (el.style.minHeight = "auto"));
+    const targetElementsHeight = targetElements.map((el) => el.offsetHeight);
+    const heighestHeight = Math.max(...targetElementsHeight);
+    targetElements.forEach((el) => (el.style.minHeight = `${heighestHeight}px`));
+  };
+
+  dynamicMinHeight(".dynamic_min");
+
   // Reset all configs when width > 800
   $(window).resize(function () {
     window_width = $(this).width();
+
+    dynamicMinHeight(".dynamic_min");
     swap_this();
 
     if (window_width > 800) {
@@ -273,28 +286,28 @@ function sendMail() {
   new WOW().init();
 
   $(document).ready(function(){
-    $('.slick-slider').slick({
+  $('.slick-slider, .slick-slider-2').slick({
     dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 3,
     autoplay: true,
     responsive: [
-    {
-      breakpoint: 1000,
-      settings: {
-        slidesToShow: 2,
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+        }
       }
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-      }
-    }
-  ]
-    });
+    ]
   });
+});
 
   // Smooth Scroll
 

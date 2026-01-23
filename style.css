@@ -304,7 +304,7 @@ main .h1_title:after{width: 110%;}
 .myprojects_boxes section{width: auto;height: auto; padding: 25px 15px 140px; position: relative;max-width: 100%;margin: 0 10px 0 0;background: var(--primaryColor2);border-radius: 17px; transition: transform 0.3s ease-in-out;}
 .myprojects_boxes section:hover { transform: scale(0.95); }
 .myprojects_boxes section figure { }
-.myprojects_boxes section figure figcaption{font: 700 30px/130% var(--primaryHeading);margin-block: 30px 0;width: max-content;margin-inline: auto;background: linear-gradient(to right, var(--secColor) 0.5%, var(--black)90%);-webkit-text-fill-color: transparent;-webkit-background-clip: text;}
+.myprojects_boxes section figure figcaption{font: 700 25px/130% var(--primaryHeading); margin-block: 30px 0; width: fit-content; margin-inline: auto; background: linear-gradient(to right,var(--secColor) .5%,var(--black)90%); -webkit-text-fill-color: transparent; -webkit-background-clip: text; display: flex; justify-content: center; flex-direction: column; align-items: center; text-transform: uppercase;}
 .myprojects_boxes section figure img { border-radius: 17px;}
 .myprojects_boxes section h2{}
 .myprojects_boxes section h2 small { }
