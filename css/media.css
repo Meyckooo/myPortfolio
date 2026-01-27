@@ -445,8 +445,8 @@ header{padding:0;}
   main .h1_title:after{top: 120%;}
   /*Bottom Area*/
   .myprojects_boxes section{display:block;width: 400px; max-width: 100%; margin:0 auto;}
-  .myprojects_boxes .slick-prev{top: 109%;}
-  .myprojects_boxes .slick-next{top: 109.5%;}
+  .myprojects_boxes .slick-prev{top: 105%;}
+  .myprojects_boxes .slick-next{top: 105.4%;}
   .myinformation_boxes section { display: block; width: 400px; max-width: 100%; margin: 0 auto; }
   .myinformation_form_parent form input { width: 100%; }
   .myinformation_form_parent form button {max-width: 100%; }
@@ -509,7 +509,5 @@ and (max-width : 500px) {
   main .h1_title{}
   .myservices_info h2{}
   .myprojects_info h2{}
-  .myprojects_boxes .slick-prev{top: 110.8%;}
-  .myprojects_boxes .slick-next{top: 111.5%;}
   .myinformation_info h2:after{width: 100%;}
 }
