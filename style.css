@@ -233,8 +233,8 @@ header{ }
 .myservices_info a { }
 .myservices_info a span { }
 .myservices_info a:hover { }
-.myservices_boxes{display:flex; justify-content: space-evenly;gap: 40px 15px;flex-wrap: wrap;}
-.myservices_boxes section{width: 100%;height: auto; position: relative;min-height: 0;max-width: 350px;border-radius: 10px;border: 2px solid #00372b;padding-block: 50px 25px;padding-inline: 15px;clip-path: polygon(67.5% 0, 85% 14%, 100% 33.5%, 100% 100%, 0 100%, 0% 60%, 0 0);}
+.myservices_boxes{display:flex; justify-content: space-evenly;gap: 40px 15px;flex-wrap: wrap; }
+.myservices_boxes section{width: 100%;height: auto; position: relative;min-height: 0;max-width: 350px;border-radius: 10px;border: 2px solid #00372b;padding-block: 50px 25px;padding-inline: 15px;clip-path: polygon(67.5% 0, 85% 14%, 100% 33.5%, 100% 100%, 0 100%, 0% 60%, 0 0); flex: 1;}
 .myservices_boxes section:after{content: '';position: absolute;top: 0;right: 0;border-top: 100px solid transparent;border-left: 110px solid var(--primaryColor);width: 0;}
 .myservices_boxes section h2{position: relative;}
 .myservices_boxes section h2:before{display: block; margin-bottom: 10px;}
@@ -316,6 +316,7 @@ main .h1_title:after{width: 110%;}
 .myprojects_box_info{}
 
 .myprojects_boxes .slick-list {max-width: 1200px;margin: 0 auto;}
+.myprojects_boxes .slick-track{display: flex;}
 .myprojects_boxes .slick-dots{bottom: -35px;}
 .myprojects_boxes .slick-dots li{ }
 .myprojects_boxes .slick-dots li button:before{color: var(--primaryColor);top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 58px;}
