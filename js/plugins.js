@@ -291,7 +291,7 @@ function sendMail() {
     infinite: true,
     speed: 300,
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 1000,
@@ -443,7 +443,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-  function openCity(evt, formsName) {
+//   function openCity(evt, formsName) {
+//   var i, tabcontent, tablinks;
+//   tabcontent = document.getElementsByClassName("tabcontent");
+//   for (i = 0; i < tabcontent.length; i++) {
+//     tabcontent[i].style.display = "none";
+//   }
+//   tablinks = document.getElementsByClassName("tablinks");
+//   for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(formsName).style.display = "block";
+//   evt.currentTarget.className += " active";
+// }
+// document.getElementById("defaultOpen").click();
+
+function openCity(evt, formsName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -455,5 +470,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   document.getElementById(formsName).style.display = "block";
   evt.currentTarget.className += " active";
+
+  // Refresh Slick carousel inside the newly visible tab
+  var activeTab = document.getElementById(formsName);
+  // Use jQuery to find the slider inside this tab and refresh it
+  if (typeof $ !== 'undefined') {
+    // Target both possible slider classes (slick-slider or slick-slider-2)
+    var $slider = $(activeTab).find('.slick-slider, .slick-slider-2');
+    if ($slider.length && $slider.hasClass('slick-initialized')) {
+      $slider.slick('setPosition');  // recalculates positions without rebuilding
+      // If 'setPosition' doesn't fully solve it, use 'refresh' (uncomment below)
+      // $slider.slick('refresh');
+    }
+  } else {
+    // Fallback: trigger a window resize event (less precise but works in many cases)
+    window.dispatchEvent(new Event('resize'));
+  }
 }
-document.getElementById("defaultOpen").click();
+
+$(document).ready(function() {
+  // Force refresh on the initially visible tab's slider
+  var visibleSlider = $('.tabcontent[style*="block"]').find('.slick-slider, .slick-slider-2');
+  if (visibleSlider.length) {
+    visibleSlider.slick('setPosition');
+  }
+});
