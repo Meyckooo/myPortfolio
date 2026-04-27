@@ -210,7 +210,7 @@ and (max-width : 1000px) {
    .myservices_info h2 { width: max-content; font-size: 50px;  padding: 0; }
    .myservices_info p { width: 100%; max-width: 100%; padding: 0; margin-block: 30px;}
 	  .myservices_boxes{ margin-top: 60px; flex-wrap: wrap; justify-content: space-evenly; gap: 40px 15px; width: 100%; max-width: 100%; }
-	  .myservices_boxes section{ width: 100%;   }
+	  .myservices_boxes section{ width: 100%;  flex:none;}
     .myservices_boxes section h2 { width: 100%; max-width: 100%; padding: 0; }
     .myservices_boxes section h2:before { display: block; position: static; margin-bottom: 10px; }
     .myservices_boxes section p { width: 100%; max-width: 100%; padding: 0; }
@@ -390,23 +390,15 @@ and (max-width : 800px) {
   .contact_con ul{  flex-direction: column;gap: 15px; align-items: center;}
   .contact_con ul li{display:block;}
 
+/* Back to Top */
 
-    /* NH styles */
-    .about_us_info::before { display: none; } 
-    .about_us_info { width: 100%; }
-    .serv_box ul li figure figcaption{font-size: 20px;}
-    .nh_image{display: none;}
-  .h2_title::after{width: 120%;}
-
-     /* DarkMode and Cookies Styles */
-     .cky-btn-revisit-wrapper { z-index: 1000 !important; }
-     .dracula-toggle-wrap.floating { z-index: 1000 !important; }
-   
-
-  /* Other */
-  .thumb_right_dd, .thumb_left_dd{width: 250px;}
-  .col3{-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-gap: 0; -moz-column-gap: 0;  column-gap: 0;}
-  .sitemap{-webkit-column-count: 1; -moz-column-count: 1; column-count: 1; -webkit-column-gap: 0; -moz-column-gap: 0;  column-gap: 0;}
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
 }
 
 /* Smartphones */
@@ -445,6 +437,7 @@ header{padding:0;}
   main .h1_title:after{top: 120%;}
   /*Bottom Area*/
   .myprojects_boxes section{display:block;width: 400px; max-width: 100%; margin:0 auto;}
+  .myprojects_boxes section figure figcaption{font-size: 20px;}
   .myprojects_boxes .slick-prev{top: 105%;}
   .myprojects_boxes .slick-next{top: 105.4%;}
   .myinformation_boxes section { display: block; width: 400px; max-width: 100%; margin: 0 auto; }

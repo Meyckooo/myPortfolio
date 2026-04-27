@@ -85,7 +85,9 @@ a[href^="tel:"]{color: inherit!important; text-decoration: none;}
 h2, h3, .h1_title { font-family: var(--primaryHeading); color: var(--primaryTxtColor); }
 h2 small, h3 small, .h1_title small { font-family: var(--bodyFont); }
 
-html {scroll-behaviour: smooth ;}
+html {
+  scroll-behavior: smooth;
+}
 
 /*header*/
 header{ }
@@ -224,7 +226,7 @@ header{ }
 
 /*middle*/
 #myservices{ padding: 0 10px;position: relative;}
-.myservices_con{min-height:0;padding:50px 0 100px;}
+.myservices_con{min-height:0;padding:0 10px 180px}
 .myservices_info { margin-bottom: 100px;}
 .myservices_info h2 { }
 .myservices_info h2 span { }
@@ -256,7 +258,7 @@ header{ }
 
 /*main*/
 #main_area{ padding: 0 10px;position: relative;display: none;}
-.main_con{min-height:0;padding:0; }
+.main_con{min-height:0;padding:0 10px 180px; }
 	main{width: 100%; text-align: center;}
 	main .h1_title{ margin: 0 auto 70px;width: max-content;font-size: 65px;}
 main .h1_title:after{width: 110%;}
@@ -291,7 +293,7 @@ main .h1_title:after{width: 110%;}
 /*end main*/
 
 /*bottom*/
-#myprojects{padding: 0 10px; position: relative;}
+#myprojects{padding:0 10px 180px;  position: relative;}
 .myprojects_con{min-height:500px;padding:25px 0 80px;text-align:center;}
 .myprojects_info { }
 .myprojects_info h2 { }
@@ -326,19 +328,37 @@ main .h1_title:after{width: 110%;}
 .myprojects_boxes .slick-next::before{content:url(images/icons/slider-arrow.png); display: block;}
 /* .myprojects_boxes [class^="myprojects_box"]{} */
 
-.tab {display: flex; justify-content: center; width: 100%; margin: 50px auto; padding: 15px 12px; border-radius: 40px; gap: 25px;}
+.tab {position: relative; display: flex; justify-content: center; width: 100%; margin-block: 100px 50px; padding: 15px 12px; border-radius: 40px; gap: 25px;}
 .tab button {border: none; outline: 0; cursor: pointer; padding: 10px; transition: .3s; color: #fff; background: var(--secColor); width: 150px; font: 700 17px/30px var(--primaryHeading); border-radius: 8px;}
 .tab button:hover { cursor: pointer; }
 .tab button.active { background: var(--black); color: var(--primaryColor); box-shadow: -7px -7px 20px 0px #00ff94, -4px -4px 5px 0px #00ff94, 7px 7px 20px 0px #00ff94, 4px 4px 5px 0px #00ff94; transition: all 0.3s ease;}
 .tabcontent { display: none;}
 .tabcontent p{text-align: center;}
 
+.tab-arrow {
+position: absolute;
+  top: -50px;
+  left: 0 !important;
+  font-size: 30px;
+  color: #007bff;
+  transition: left .3s cubic-bezier(.2,.9,.4,1.1);
+  pointer-events: none;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.1));
+  animation: gentleBounce 1s infinite;
+  right: 0;
+  margin: 0 auto;
+}
+
+@keyframes gentleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
 
 #mytech {
 	position: relative;
   }
   .mytech_con {
-	padding: 120px 0;
+	padding: 0 10px 180px;
   }
   .mytech_info {
 	position: relative;
@@ -491,7 +511,7 @@ main .h1_title:after{width: 110%;}
 
 
 #myinformation{ padding: 0 10px; position: relative;}
-.myinformation_con{min-height: 0; padding: 120px 0;}
+.myinformation_con{min-height: 0; padding: 0 10px 180px;}
 .myinformation_info { }
 .myinformation_info h2 { }
 .myinformation_info h2 span { }
@@ -547,7 +567,7 @@ main .h1_title:after{width: 110%;}
 
 /*footer*/
 footer{}
-.footer_top{ padding: 0 10px;position: relative;}
+.footer_top{box-shadow: 0 -3px 3px rgba(0,255,148,.5); padding: 0 10px;position: relative;}
 .footer_top_con{min-height:0;padding:50px 0 60px;display: block;}
 .gmap { width: 100%;height: 400px;}
 .gmap iframe { display: block; width: 100%; height: 100%; }
@@ -764,6 +784,43 @@ center; margin: 20px auto 0; box-shadow: 0 0 25px 0 rgba(0 0 0/0.1); }
 .text_style:before{content:''; width:0; height: 2px; position: absolute; left: 0; right: 0; bottom: -2px; margin:0 auto; background: var(--bodyColor); transition: all .3s ease-in-out;}
 .text_style:hover:before{width: 90%;}
 /* End of Button styles */
+
+
+
+/* Back to Top */
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primaryColor);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover {
+  background-color: #0dcf7e;
+  transform: scale(1.05);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
 
 .custom-cursor { width: 20px; aspect-ratio: 1/1; border-radius: 0 70px 80px 80px; background-color: #000; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999999; }
 

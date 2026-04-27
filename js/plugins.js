@@ -416,6 +416,9 @@ $(window).on("mousemove", e => {
 
 });
 
+
+// Not Inside The Global
+
 document.addEventListener('DOMContentLoaded', function() {
       const track = document.getElementById('carouselTrack');
       const items = track.getElementsByClassName('carousel-item');
@@ -440,25 +443,34 @@ document.addEventListener('DOMContentLoaded', function() {
       track.addEventListener('mouseleave', () => {
         track.style.animationPlayState = 'running';
       });
+
     });
 
 
-//   function openCity(evt, formsName) {
-//   var i, tabcontent, tablinks;
-//   tabcontent = document.getElementsByClassName("tabcontent");
-//   for (i = 0; i < tabcontent.length; i++) {
-//     tabcontent[i].style.display = "none";
-//   }
-//   tablinks = document.getElementsByClassName("tablinks");
-//   for (i = 0; i < tablinks.length; i++) {
-//     tablinks[i].className = tablinks[i].className.replace(" active", "");
-//   }
-//   document.getElementById(formsName).style.display = "block";
-//   evt.currentTarget.className += " active";
-// }
-// document.getElementById("defaultOpen").click();
+   // Create the arrow element and add it to .tab
+const tabContainer = document.querySelector('.tab');
+const arrow = document.createElement('div');
+arrow.className = 'tab-arrow';
+arrow.textContent = '👇'; // down arrow symbol
+tabContainer.style.position = 'relative';
+tabContainer.appendChild(arrow);
 
-function openCity(evt, formsName) {
+// Function to position arrow above active button
+function positionArrow() {
+  const activeBtn = document.querySelector('.tab .tablinks.active');
+  if (activeBtn && arrow) {
+    const btnRect = activeBtn.getBoundingClientRect();
+    const containerRect = tabContainer.getBoundingClientRect();
+    const leftOffset = btnRect.left - containerRect.left;
+    const btnCenter = leftOffset + (btnRect.width / 2);
+    // Center the arrow above button
+    arrow.style.left = (btnCenter - (arrow.offsetWidth / 2)) + 'px';
+  }
+}
+
+// Enhanced openCity function (keep your original tab switching and Slick refresh)
+window.openCity = function(evt, formsName) {
+  // --- Tab switching logic ---
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -471,27 +483,52 @@ function openCity(evt, formsName) {
   document.getElementById(formsName).style.display = "block";
   evt.currentTarget.className += " active";
 
-  // Refresh Slick carousel inside the newly visible tab
+  // --- Refresh Slick carousel inside the newly visible tab ---
   var activeTab = document.getElementById(formsName);
-  // Use jQuery to find the slider inside this tab and refresh it
   if (typeof $ !== 'undefined') {
-    // Target both possible slider classes (slick-slider or slick-slider-2)
     var $slider = $(activeTab).find('.slick-slider, .slick-slider-2');
     if ($slider.length && $slider.hasClass('slick-initialized')) {
-      $slider.slick('setPosition');  // recalculates positions without rebuilding
-      // If 'setPosition' doesn't fully solve it, use 'refresh' (uncomment below)
-      // $slider.slick('refresh');
+      $slider.slick('setPosition');
     }
-  } else {
-    // Fallback: trigger a window resize event (less precise but works in many cases)
-    window.dispatchEvent(new Event('resize'));
   }
+
+  // --- Move the arrow to the active button ---
+  positionArrow();
 }
 
-$(document).ready(function() {
-  // Force refresh on the initially visible tab's slider
-  var visibleSlider = $('.tabcontent[style*="block"]').find('.slick-slider, .slick-slider-2');
-  if (visibleSlider.length) {
-    visibleSlider.slick('setPosition');
-  }
+// Initial arrow positioning on page load
+window.addEventListener('load', function() {
+  positionArrow();
+});
+
+// Reposition on window resize (keeps arrow aligned)
+window.addEventListener('resize', function() {
+  positionArrow();
+});
+
+// If you already have a default open click, ensure it's called
+document.getElementById("defaultOpen").click();
+
+// Back to Top functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopButton = document.querySelector('.back-to-top');
+  
+  if (!backToTopButton) return;
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) { // Show after scrolling 300px
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
+    }
+  });
+  
+  // Smooth scroll to top when clicked
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
