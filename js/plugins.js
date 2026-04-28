@@ -447,7 +447,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-   // Create the arrow element and add it to .tab
+// ========================
+// 1. ARROW (stays & slides)
+// ========================
 const tabContainer = document.querySelector('.tab');
 const arrow = document.createElement('div');
 arrow.className = 'tab-arrow';
@@ -455,7 +457,7 @@ arrow.textContent = '👇'; // down arrow symbol
 tabContainer.style.position = 'relative';
 tabContainer.appendChild(arrow);
 
-// Function to position arrow above active button
+// Position arrow above active button
 function positionArrow() {
   const activeBtn = document.querySelector('.tab .tablinks.active');
   if (activeBtn && arrow) {
@@ -463,14 +465,27 @@ function positionArrow() {
     const containerRect = tabContainer.getBoundingClientRect();
     const leftOffset = btnRect.left - containerRect.left;
     const btnCenter = leftOffset + (btnRect.width / 2);
-    // Center the arrow above button
     arrow.style.left = (btnCenter - (arrow.offsetWidth / 2)) + 'px';
   }
 }
 
-// Enhanced openCity function (keep your original tab switching and Slick refresh)
+// ========================
+// 2. MOBILE-FRIENDLY CAROUSEL REFRESH
+// ========================
+function refreshVisibleSlider(container) {
+  if (typeof $ === 'undefined') return;
+  var $slider = $(container).find('.slick-slider, .slick-slider-2');
+  if ($slider.length && $slider.hasClass('slick-initialized')) {
+    // 'refresh' is more reliable on mobile than 'setPosition'
+    $slider.slick('refresh');
+  }
+}
+
+// ========================
+// 3. ENHANCED openCity FUNCTION
+// ========================
 window.openCity = function(evt, formsName) {
-  // --- Tab switching logic ---
+  // --- Tab switching logic (original) ---
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -483,31 +498,36 @@ window.openCity = function(evt, formsName) {
   document.getElementById(formsName).style.display = "block";
   evt.currentTarget.className += " active";
 
-  // --- Refresh Slick carousel inside the newly visible tab ---
-  var activeTab = document.getElementById(formsName);
-  if (typeof $ !== 'undefined') {
-    var $slider = $(activeTab).find('.slick-slider, .slick-slider-2');
-    if ($slider.length && $slider.hasClass('slick-initialized')) {
-      $slider.slick('setPosition');
-    }
-  }
-
-  // --- Move the arrow to the active button ---
+  // --- Move the arrow immediately ---
   positionArrow();
+
+  // --- Refresh carousel after a short delay (critical for mobile) ---
+  var activeTab = document.getElementById(formsName);
+  setTimeout(function() {
+    refreshVisibleSlider(activeTab);
+  }, 50); // 50ms gives browser time to compute layout
 }
 
-// Initial arrow positioning on page load
+// ========================
+// 4. EVENT LISTENERS (initial load + resize)
+// ========================
 window.addEventListener('load', function() {
   positionArrow();
+  // Refresh the initially visible tab's slider
+  var visibleTab = document.querySelector('.tabcontent[style*="block"]');
+  if (visibleTab) refreshVisibleSlider(visibleTab);
 });
 
-// Reposition on window resize (keeps arrow aligned)
+// On window resize (orientation change on mobile)
 window.addEventListener('resize', function() {
   positionArrow();
+  var visibleTab = document.querySelector('.tabcontent[style*="block"]');
+  if (visibleTab) refreshVisibleSlider(visibleTab);
 });
 
-// If you already have a default open click, ensure it's called
+// Open default tab (must run after everything else)
 document.getElementById("defaultOpen").click();
+
 
 // Back to Top functionality
 document.addEventListener('DOMContentLoaded', function() {

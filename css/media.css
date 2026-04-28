@@ -382,6 +382,7 @@ and (max-width : 800px) {
   main .h1_title::after { width: 80%;}
 
   /*Bottom Area*/
+  
   .myprojects_info p::before { width: 80%;}
   .myinformation_form_parent form input{width: 100%;}
 
