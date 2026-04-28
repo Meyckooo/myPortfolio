@@ -281,7 +281,7 @@ header{ }
 .myservices_boxes{display:flex; justify-content: space-evenly;gap: 40px 15px;flex-wrap: wrap; }
 .myservices_boxes section{width: 100%;height: auto; position: relative;min-height: 0;max-width: 350px;border-radius: 10px;border: 2px solid #00372b;padding-block: 50px 25px;padding-inline: 15px;clip-path: polygon(67.5% 0, 85% 14%, 100% 33.5%, 100% 100%, 0 100%, 0% 60%, 0 0); flex: 1;}
 .myservices_boxes section:after{content: '';position: absolute;top: 0;right: 0;border-top: 100px solid transparent;border-left: 110px solid var(--primaryColor);width: 0;}
-.myservices_boxes section h2{position: relative;}
+.myservices_boxes section h2{position: relative; color: #fff;}
 .myservices_boxes section h2:before{display: block; margin-bottom: 10px;}
 .myservices_boxes section:nth-child(1) h2:before{content:url(images/icons/services-icon1.png);}
 .myservices_boxes section:nth-child(2) h2:before{content:url(images/icons/services-icon2.png);}
