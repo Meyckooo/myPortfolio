@@ -552,7 +552,7 @@ position: absolute;
 .captcha_div { }
 .button_flex{display: flex; align-items: center;gap: 15px;}
 
-.myinformation_figure_icon{position: absolute;top: 327px;right: 50px;z-index: -1;width: 100%;max-width: 700px;}
+.myinformation_figure_icon{position: absolute; top: 50%; right: 50px; z-index: -1; width: 100%; max-width: 700px; transform: translateY(-50%);}
 .myinformation_figure_icon figure{}
 
 .disclaimer {text-align: left;}
