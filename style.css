@@ -385,19 +385,62 @@ main .h1_title:after{width: 110%;}
   transform: scale(1.02) !important;
 }
 
+/* Slick Dots – Container */
+.myprojects_boxes .slick-dots {
+  bottom: -60px;
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+}
+
+.myprojects_boxes .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: var(--primaryColor);
+  opacity: 0.5;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Inactive dots – smaller circle (optional) */
+.myprojects_boxes .slick-dots li button {
+  width: 15px;
+  height: 8px;
+  border-radius: 20px;
+ background: var(--primaryColor);
+}
+
+/* Active dot – wider (5px width) + neon green */
+.myprojects_boxes .slick-dots li.slick-active button {
+  width: 25px;
+  height: 8px;
+  background: #00FF94;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(0, 255, 148, 0.6);
+  opacity: 1;
+}
+
+.myprojects_boxes .slick-dots li button::before{
+	display: none;
+}
 
 .myprojects_boxes .slick-list {max-width: 1200px;margin: 0 auto;}
 .myprojects_boxes .slick-track{display: flex;}
-.myprojects_boxes .slick-dots{bottom: -35px;}
-.myprojects_boxes .slick-dots li{ }
-.myprojects_boxes .slick-dots li button:before{color: var(--primaryColor);top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: 58px;}
 .myprojects_boxes .slick-prev{left:0;}
 .myprojects_boxes .slick-next{right:0;}
 .myprojects_boxes .slick-prev::before{content:url(images/icons/slider-arrow.png);transform: scale(-1);display: block;}
 .myprojects_boxes .slick-next::before{content:url(images/icons/slider-arrow.png); display: block;}
 /* .myprojects_boxes [class^="myprojects_box"]{} */
 
-.tab {position: relative; display: flex; justify-content: center; width: 100%; margin-block: 100px 50px; padding: 15px 12px; border-radius: 40px; gap: 25px;}
+.tab {position: relative; display: flex; justify-content: center; width: 100%; margin-block: 100px 50px; padding: 15px 12px; border-radius: 40px; gap: 25px; flex-wrap: wrap;}
 .tab button {border: none; outline: 0; cursor: pointer; padding: 10px; transition: .3s; color: #fff; background: var(--secColor); width: 150px; font: 700 17px/30px var(--primaryHeading); border-radius: 8px;}
 .tab button:hover { cursor: pointer; }
 .tab button.active { background: var(--black); color: var(--primaryColor); box-shadow: -7px -7px 20px 0px #00ff94, -4px -4px 5px 0px #00ff94, 7px 7px 20px 0px #00ff94, 4px 4px 5px 0px #00ff94; transition: all 0.3s ease;}

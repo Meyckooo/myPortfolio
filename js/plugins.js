@@ -286,8 +286,8 @@ function sendMail() {
   new WOW().init();
 
   $(document).ready(function(){
-  $('.slick-slider, .slick-slider-2').slick({
-    dots: false,
+  $('.slick-slider, .slick-slider-2, .slick-slider-3').slick({
+    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 3,
@@ -303,6 +303,7 @@ function sendMail() {
         breakpoint: 800,
         settings: {
           slidesToShow: 1,
+          autoplay: true,
         }
       }
     ]
@@ -528,31 +529,7 @@ window.addEventListener('resize', function() {
 // Open default tab (must run after everything else)
 document.getElementById("defaultOpen").click();
 
-
-// // Back to Top functionality
-// document.addEventListener('DOMContentLoaded', function() {
-//   const backToTopButton = document.querySelector('.back-to-top');
-  
-//   if (!backToTopButton) return;
-  
-//   // Show/hide button based on scroll position
-//   window.addEventListener('scroll', function() {
-//     if (window.scrollY > 300) { // Show after scrolling 300px
-//       backToTopButton.classList.add('show');
-//     } else {
-//       backToTopButton.classList.remove('show');
-//     }
-//   });
-  
-//   // Smooth scroll to top when clicked
-//   backToTopButton.addEventListener('click', function() {
-//     window.scrollTo({
-//       top: 0,
-//       behavior: 'smooth'
-//     });
-//   });
-// });
-
+// BACK TO TOP CODE
 const backToTop = document.querySelector('.back-to-top');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
