@@ -291,7 +291,7 @@ function sendMail() {
     infinite: true,
     speed: 300,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1000,
@@ -381,7 +381,10 @@ const colors = [
 ];
 // Initialize each circle
 $(".custom-cursor").each(function (i) {
-  $(this).data({ x: 0, y: 0 }).css("background-color", colors[i % colors.length]);
+  const currentColor = colors[i % colors.length];
+  $(this).data({ x: 0, y: 0 }).css({
+    "background-color": currentColor,
+  });
 });
 
 // Track mouse position
@@ -414,7 +417,6 @@ $(window).on("mousemove", e => {
   requestAnimationFrame(animate);
 })();
   
-
 });
 
 

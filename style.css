@@ -58,6 +58,7 @@ strong , b{ font-weight: bold;}
 em, i{font-style: italic;}
 input[type="submit"]{cursor: pointer;}
 a[href^="tel:"]{color: inherit!important; text-decoration: none;}
+a:hover{cursor: none;}
 .clearfix:before, .clearfix:after { content:""; display: table; clear: both; }
 .clearfix {clear: both; overflow: hidden;}
 .comp{color:var(--primaryColor); font-weight:bold; }
@@ -428,6 +429,10 @@ main .h1_title:after{width: 110%;}
   opacity: 1;
 }
 
+.myprojects_boxes .slick-dots li button:hover{
+	cursor: none !important;
+}
+
 .myprojects_boxes .slick-dots li button::before{
 	display: none;
 }
@@ -442,7 +447,7 @@ main .h1_title:after{width: 110%;}
 
 .tab {position: relative; display: flex; justify-content: center; width: 100%; margin-block: 100px 50px; padding: 15px 12px; border-radius: 40px; gap: 25px; flex-wrap: wrap;}
 .tab button {border: none; outline: 0; cursor: pointer; padding: 10px; transition: .3s; color: #fff; background: var(--secColor); width: 150px; font: 700 17px/30px var(--primaryHeading); border-radius: 8px;}
-.tab button:hover { cursor: pointer; }
+.tab button:hover { cursor: none;  background: var(--black); color: var(--primaryColor); box-shadow: -7px -7px 20px 0px #00ff94, -4px -4px 5px 0px #00ff94, 7px 7px 20px 0px #00ff94, 4px 4px 5px 0px #00ff94; transition: all 0.3s ease;}
 .tab button.active { background: var(--black); color: var(--primaryColor); box-shadow: -7px -7px 20px 0px #00ff94, -4px -4px 5px 0px #00ff94, 7px 7px 20px 0px #00ff94, 4px 4px 5px 0px #00ff94; transition: all 0.3s ease;}
 .tabcontent { display: none;}
 .tabcontent p{text-align: center;}
@@ -648,7 +653,7 @@ position: absolute;
 
 
 .myinformation_form_con { padding: 0;text-align: center;}
-.myinformation_form_parent {min-height: 0;padding: 0;width: 100%;max-width: 435px;margin-top: 150px;text-align: left;}
+.myinformation_form_parent {min-height: 0;   padding: 40px 25px;   width: 100%;   max-width: 435px;   margin-top: 150px;   text-align: left;   box-shadow: -18px 18px 5px 1px rgba(0, 255, 148,0.16);   border-radius: 17px;   border: 2px solid #00CF77;}
 .myinformation_form_parent form {margin: 0 0 0;   display: flex;   justify-content: space-between;   flex-wrap: wrap;       gap: 30px 0;}
 .myinformation_form_parent label{display: inline-flex;margin-bottom: 10px;font: 700 17px/100% var(--primaryHeading);color: var(--white);}
 .myinformation_form_parent .contactNameTxt{width: 100%;}
@@ -974,7 +979,7 @@ center; margin: 20px auto 0; box-shadow: 0 0 25px 0 rgba(0 0 0/0.1); }
 }
 
 
-.custom-cursor { width: 20px; aspect-ratio: 1/1; border-radius: 0 70px 80px 80px; background-color: #000; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999999; }
+.custom-cursor { width: 20px; aspect-ratio: 1/1; border-radius: 0 70px 80px 80px; background-color: #000; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999999; box-shadow: 0 0 12px rgba(0, 255, 148, 0.6);}
 
 	/* Cookies */
 	.cky-revisit-bottom-left { right: auto !important; left: 15px !important; bottom: 85px !important; background: var(--primaryColor) !important; filter: drop-shadow(0 0 1px rgb(255, 255, 255)) drop-shadow(0 0 1px rgb(255, 255, 255)) drop-shadow(0 0 1px rgb(255, 255, 255));}
@@ -1149,3 +1154,7 @@ center; margin: 20px auto 0; box-shadow: 0 0 25px 0 rgba(0 0 0/0.1); }
         transform: translateX(-50%);
       }
     }
+
+
+	.float{animation:float 3s infinite ease-in-out}
+  @keyframes float{0%,100%{transform:translateY(-10px)}50%{transform:translateY(10px)}}
